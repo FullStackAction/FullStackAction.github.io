@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习 | FSA全栈行动</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-3568502583266202" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/global.js"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?885476c2eae58d4aee1ab7fcfb548adb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+      </script>
+    <meta name="description" content="分享Android、iOS、Python、Vue等技术资讯、学习笔记，成功有梦想的全栈工程师，欢迎关注。">
+    <meta name="keywords" content="FSA全栈行动,LinXunFeng,GitLqr,全栈技术博客,移动端,web前端,后端开发,前端框架,web前端,Android框架,iOS框架,Flutter框架,Python框架,Vue框架,技术文档,学习,面试,Java,Kotlin,object-c,Swift,Kotlin,Dart,JavaScript,js,ES6,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="code-Cyx4xlZmzI">
+    <meta name="google-site-verification" content="_0KO4KbxdSwB-TPRQ8bRqmML8dnrx5G82GhQNZlR4HU">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.04d17316.css" as="style"><link rel="preload" href="/assets/js/app.4186ca70.js" as="script"><link rel="preload" href="/assets/js/2.7c3035d6.js" as="script"><link rel="preload" href="/assets/js/20.60f81383.js" as="script"><link rel="prefetch" href="/assets/js/10.2e163faf.js"><link rel="prefetch" href="/assets/js/100.1cf85e72.js"><link rel="prefetch" href="/assets/js/101.0671d32c.js"><link rel="prefetch" href="/assets/js/102.86844a7a.js"><link rel="prefetch" href="/assets/js/103.6eff54c1.js"><link rel="prefetch" href="/assets/js/104.39135eea.js"><link rel="prefetch" href="/assets/js/105.ed00b8b2.js"><link rel="prefetch" href="/assets/js/106.f6da90ee.js"><link rel="prefetch" href="/assets/js/107.e80dff8d.js"><link rel="prefetch" href="/assets/js/108.e6886aa2.js"><link rel="prefetch" href="/assets/js/109.8781cedc.js"><link rel="prefetch" href="/assets/js/11.ffe2eaf9.js"><link rel="prefetch" href="/assets/js/110.85e43603.js"><link rel="prefetch" href="/assets/js/111.0cdc1379.js"><link rel="prefetch" href="/assets/js/112.97104f70.js"><link rel="prefetch" href="/assets/js/113.ad63689d.js"><link rel="prefetch" href="/assets/js/114.b8d81000.js"><link rel="prefetch" href="/assets/js/115.223ca2dc.js"><link rel="prefetch" href="/assets/js/116.cce6ab30.js"><link rel="prefetch" href="/assets/js/117.9847879b.js"><link rel="prefetch" href="/assets/js/118.4401425a.js"><link rel="prefetch" href="/assets/js/119.fbd49b4f.js"><link rel="prefetch" href="/assets/js/12.89984f36.js"><link rel="prefetch" href="/assets/js/120.bd051d93.js"><link rel="prefetch" href="/assets/js/121.59c401c2.js"><link rel="prefetch" href="/assets/js/122.0df69bb5.js"><link rel="prefetch" href="/assets/js/123.b4144a1f.js"><link rel="prefetch" href="/assets/js/124.aeffef00.js"><link rel="prefetch" href="/assets/js/125.d4f71218.js"><link rel="prefetch" href="/assets/js/126.1e1189eb.js"><link rel="prefetch" href="/assets/js/127.e8d7c754.js"><link rel="prefetch" href="/assets/js/128.32cc9d6e.js"><link rel="prefetch" href="/assets/js/129.9d9f67d6.js"><link rel="prefetch" href="/assets/js/13.eedcba36.js"><link rel="prefetch" href="/assets/js/130.8e072106.js"><link rel="prefetch" href="/assets/js/131.d5a1b7dc.js"><link rel="prefetch" href="/assets/js/132.53851eb8.js"><link rel="prefetch" href="/assets/js/133.f5008d55.js"><link rel="prefetch" href="/assets/js/134.3d845c92.js"><link rel="prefetch" href="/assets/js/135.a0916b00.js"><link rel="prefetch" href="/assets/js/136.af28838b.js"><link rel="prefetch" href="/assets/js/137.b1bc3b13.js"><link rel="prefetch" href="/assets/js/138.55aa341a.js"><link rel="prefetch" href="/assets/js/139.03b5f7bf.js"><link rel="prefetch" href="/assets/js/14.980f8cda.js"><link rel="prefetch" href="/assets/js/140.690c1340.js"><link rel="prefetch" href="/assets/js/141.6b2b37b1.js"><link rel="prefetch" href="/assets/js/142.7791e081.js"><link rel="prefetch" href="/assets/js/143.e2755ea1.js"><link rel="prefetch" href="/assets/js/144.c651a81e.js"><link rel="prefetch" href="/assets/js/145.78366984.js"><link rel="prefetch" href="/assets/js/146.83151f64.js"><link rel="prefetch" href="/assets/js/147.63b99c22.js"><link rel="prefetch" href="/assets/js/148.ca7b0228.js"><link rel="prefetch" href="/assets/js/149.343db1e9.js"><link rel="prefetch" href="/assets/js/15.034e26b8.js"><link rel="prefetch" href="/assets/js/150.756cc39f.js"><link rel="prefetch" href="/assets/js/151.e3d30d97.js"><link rel="prefetch" href="/assets/js/152.c71977f5.js"><link rel="prefetch" href="/assets/js/153.adbfcc27.js"><link rel="prefetch" href="/assets/js/154.60d19293.js"><link rel="prefetch" href="/assets/js/155.b95a1bb5.js"><link rel="prefetch" href="/assets/js/156.ea423bbb.js"><link rel="prefetch" href="/assets/js/157.d874c539.js"><link rel="prefetch" href="/assets/js/158.321647c5.js"><link rel="prefetch" href="/assets/js/159.dc415cc4.js"><link rel="prefetch" href="/assets/js/16.c7aca3d6.js"><link rel="prefetch" href="/assets/js/160.c4ea2082.js"><link rel="prefetch" href="/assets/js/161.ac943a92.js"><link rel="prefetch" href="/assets/js/162.1f4c492b.js"><link rel="prefetch" href="/assets/js/163.90cb829a.js"><link rel="prefetch" href="/assets/js/164.80b6d903.js"><link rel="prefetch" href="/assets/js/165.dec1255f.js"><link rel="prefetch" href="/assets/js/166.95dd72dd.js"><link rel="prefetch" href="/assets/js/167.d6ce42dc.js"><link rel="prefetch" href="/assets/js/168.64f5a9f3.js"><link rel="prefetch" href="/assets/js/169.5d515d7f.js"><link rel="prefetch" href="/assets/js/17.5e3fdba7.js"><link rel="prefetch" href="/assets/js/170.d3c9a479.js"><link rel="prefetch" href="/assets/js/171.c06ff6e6.js"><link rel="prefetch" href="/assets/js/172.655a56c9.js"><link rel="prefetch" href="/assets/js/173.7b5910c1.js"><link rel="prefetch" href="/assets/js/174.923cb41f.js"><link rel="prefetch" href="/assets/js/175.24becfb8.js"><link rel="prefetch" href="/assets/js/176.fd72337c.js"><link rel="prefetch" href="/assets/js/177.6867bd00.js"><link rel="prefetch" href="/assets/js/178.6aa71c88.js"><link rel="prefetch" href="/assets/js/179.7f00fa66.js"><link rel="prefetch" href="/assets/js/18.aa9edc03.js"><link rel="prefetch" href="/assets/js/180.a8442310.js"><link rel="prefetch" href="/assets/js/181.5618313f.js"><link rel="prefetch" href="/assets/js/182.f875fd94.js"><link rel="prefetch" href="/assets/js/183.284fdc29.js"><link rel="prefetch" href="/assets/js/184.c42317a1.js"><link rel="prefetch" href="/assets/js/185.7d2fed8a.js"><link rel="prefetch" href="/assets/js/186.c4a2b1c3.js"><link rel="prefetch" href="/assets/js/187.2d5bad73.js"><link rel="prefetch" href="/assets/js/188.2467091c.js"><link rel="prefetch" href="/assets/js/189.957b59ec.js"><link rel="prefetch" href="/assets/js/19.1c3ff15d.js"><link rel="prefetch" href="/assets/js/190.f3536d48.js"><link rel="prefetch" href="/assets/js/191.f78b96f7.js"><link rel="prefetch" href="/assets/js/192.6eddaada.js"><link rel="prefetch" href="/assets/js/193.afb2bc0f.js"><link rel="prefetch" href="/assets/js/194.20af5b00.js"><link rel="prefetch" href="/assets/js/195.630d4e49.js"><link rel="prefetch" href="/assets/js/196.9bcb72ff.js"><link rel="prefetch" href="/assets/js/197.1c79afb2.js"><link rel="prefetch" href="/assets/js/198.0bc3c479.js"><link rel="prefetch" href="/assets/js/199.85c724c5.js"><link rel="prefetch" href="/assets/js/200.079658eb.js"><link rel="prefetch" href="/assets/js/201.07306f56.js"><link rel="prefetch" href="/assets/js/202.b6c8d973.js"><link rel="prefetch" href="/assets/js/203.b43dc115.js"><link rel="prefetch" href="/assets/js/204.4ab9f243.js"><link rel="prefetch" href="/assets/js/205.81907406.js"><link rel="prefetch" href="/assets/js/206.c2b98103.js"><link rel="prefetch" href="/assets/js/207.4fe7b81d.js"><link rel="prefetch" href="/assets/js/208.33d5bedf.js"><link rel="prefetch" href="/assets/js/209.228aacf9.js"><link rel="prefetch" href="/assets/js/21.9d4e59c6.js"><link rel="prefetch" href="/assets/js/210.12927a64.js"><link rel="prefetch" href="/assets/js/211.a91ee09f.js"><link rel="prefetch" href="/assets/js/212.1b732e8f.js"><link rel="prefetch" href="/assets/js/213.d064d0b4.js"><link rel="prefetch" href="/assets/js/214.7eae06b2.js"><link rel="prefetch" href="/assets/js/215.3c259b72.js"><link rel="prefetch" href="/assets/js/216.2e4c0b96.js"><link rel="prefetch" href="/assets/js/217.c9f79b8c.js"><link rel="prefetch" href="/assets/js/218.570e7800.js"><link rel="prefetch" href="/assets/js/219.e6d82b1d.js"><link rel="prefetch" href="/assets/js/22.ab794123.js"><link rel="prefetch" href="/assets/js/220.e316bd21.js"><link rel="prefetch" href="/assets/js/221.147aeb75.js"><link rel="prefetch" href="/assets/js/222.e95e65c3.js"><link rel="prefetch" href="/assets/js/223.7c40e19d.js"><link rel="prefetch" href="/assets/js/224.a2634feb.js"><link rel="prefetch" href="/assets/js/225.a8bee737.js"><link rel="prefetch" href="/assets/js/226.54053cf8.js"><link rel="prefetch" href="/assets/js/227.4040a86f.js"><link rel="prefetch" href="/assets/js/228.88bfa0db.js"><link rel="prefetch" href="/assets/js/229.a9bd332e.js"><link rel="prefetch" href="/assets/js/23.3e7faefe.js"><link rel="prefetch" href="/assets/js/230.faafb8bd.js"><link rel="prefetch" href="/assets/js/231.7af29c39.js"><link rel="prefetch" href="/assets/js/232.b150e57c.js"><link rel="prefetch" href="/assets/js/233.c4b0d083.js"><link rel="prefetch" href="/assets/js/234.3820121a.js"><link rel="prefetch" href="/assets/js/235.483b6f02.js"><link rel="prefetch" href="/assets/js/236.cdccfc5d.js"><link rel="prefetch" href="/assets/js/237.eaabb625.js"><link rel="prefetch" href="/assets/js/238.80f15f41.js"><link rel="prefetch" href="/assets/js/239.9d05df80.js"><link rel="prefetch" href="/assets/js/24.4a5ed28f.js"><link rel="prefetch" href="/assets/js/240.7f13627c.js"><link rel="prefetch" href="/assets/js/241.c47e1ebd.js"><link rel="prefetch" href="/assets/js/242.fb87e435.js"><link rel="prefetch" href="/assets/js/243.39f12083.js"><link rel="prefetch" href="/assets/js/244.b60e8c2e.js"><link rel="prefetch" href="/assets/js/245.5dbcf90c.js"><link rel="prefetch" href="/assets/js/246.05c37a04.js"><link rel="prefetch" href="/assets/js/247.5bef92a1.js"><link rel="prefetch" href="/assets/js/25.304e3303.js"><link rel="prefetch" href="/assets/js/26.78bc38e4.js"><link rel="prefetch" href="/assets/js/27.93ceaf69.js"><link rel="prefetch" href="/assets/js/28.98658fad.js"><link rel="prefetch" href="/assets/js/29.6ddd6c75.js"><link rel="prefetch" href="/assets/js/3.b738559b.js"><link rel="prefetch" href="/assets/js/30.71d9e7d6.js"><link rel="prefetch" href="/assets/js/31.87f45f94.js"><link rel="prefetch" href="/assets/js/32.97670466.js"><link rel="prefetch" href="/assets/js/33.8f0fc1ed.js"><link rel="prefetch" href="/assets/js/34.9e5ceb82.js"><link rel="prefetch" href="/assets/js/35.428722ad.js"><link rel="prefetch" href="/assets/js/36.41b51f6c.js"><link rel="prefetch" href="/assets/js/37.f4dd9d75.js"><link rel="prefetch" href="/assets/js/38.4223fc2b.js"><link rel="prefetch" href="/assets/js/39.ba33be6d.js"><link rel="prefetch" href="/assets/js/4.f7dc433c.js"><link rel="prefetch" href="/assets/js/40.c8600c70.js"><link rel="prefetch" href="/assets/js/41.6a7e5821.js"><link rel="prefetch" href="/assets/js/42.0ec42041.js"><link rel="prefetch" href="/assets/js/43.c92942e7.js"><link rel="prefetch" href="/assets/js/44.0d22a404.js"><link rel="prefetch" href="/assets/js/45.a6c3040e.js"><link rel="prefetch" href="/assets/js/46.84feaafc.js"><link rel="prefetch" href="/assets/js/47.a8d57446.js"><link rel="prefetch" href="/assets/js/48.82a19dc5.js"><link rel="prefetch" href="/assets/js/49.d8a23ee2.js"><link rel="prefetch" href="/assets/js/5.ff839684.js"><link rel="prefetch" href="/assets/js/50.91efb7df.js"><link rel="prefetch" href="/assets/js/51.b9ba18f7.js"><link rel="prefetch" href="/assets/js/52.66c1b381.js"><link rel="prefetch" href="/assets/js/53.9d11cf40.js"><link rel="prefetch" href="/assets/js/54.f053b9cf.js"><link rel="prefetch" href="/assets/js/55.ca58a222.js"><link rel="prefetch" href="/assets/js/56.7cd797c3.js"><link rel="prefetch" href="/assets/js/57.0bb67c6d.js"><link rel="prefetch" href="/assets/js/58.70914d63.js"><link rel="prefetch" href="/assets/js/59.0e552c49.js"><link rel="prefetch" href="/assets/js/6.9f80852f.js"><link rel="prefetch" href="/assets/js/60.1b2d473d.js"><link rel="prefetch" href="/assets/js/61.53817796.js"><link rel="prefetch" href="/assets/js/62.e0e2273f.js"><link rel="prefetch" href="/assets/js/63.b8232360.js"><link rel="prefetch" href="/assets/js/64.eeb341aa.js"><link rel="prefetch" href="/assets/js/65.009578fb.js"><link rel="prefetch" href="/assets/js/66.5a3fad8e.js"><link rel="prefetch" href="/assets/js/67.b2ab2ce1.js"><link rel="prefetch" href="/assets/js/68.95880998.js"><link rel="prefetch" href="/assets/js/69.584cb961.js"><link rel="prefetch" href="/assets/js/7.c5221a20.js"><link rel="prefetch" href="/assets/js/70.bbe6a9ae.js"><link rel="prefetch" href="/assets/js/71.18c8d61c.js"><link rel="prefetch" href="/assets/js/72.b80f8705.js"><link rel="prefetch" href="/assets/js/73.41558958.js"><link rel="prefetch" href="/assets/js/74.ca5b7745.js"><link rel="prefetch" href="/assets/js/75.4d50614e.js"><link rel="prefetch" href="/assets/js/76.11125b15.js"><link rel="prefetch" href="/assets/js/77.4009c5e6.js"><link rel="prefetch" href="/assets/js/78.6c3cde16.js"><link rel="prefetch" href="/assets/js/79.d8787be4.js"><link rel="prefetch" href="/assets/js/8.833cfb58.js"><link rel="prefetch" href="/assets/js/80.58702890.js"><link rel="prefetch" href="/assets/js/81.98257fc5.js"><link rel="prefetch" href="/assets/js/82.6c3d67e4.js"><link rel="prefetch" href="/assets/js/83.afcefc23.js"><link rel="prefetch" href="/assets/js/84.ca4ad628.js"><link rel="prefetch" href="/assets/js/85.312baa74.js"><link rel="prefetch" href="/assets/js/86.8737094f.js"><link rel="prefetch" href="/assets/js/87.61c5da9e.js"><link rel="prefetch" href="/assets/js/88.e1e59ac9.js"><link rel="prefetch" href="/assets/js/89.9aea3b85.js"><link rel="prefetch" href="/assets/js/9.c6c7d2a7.js"><link rel="prefetch" href="/assets/js/90.b71842e2.js"><link rel="prefetch" href="/assets/js/91.829aaacc.js"><link rel="prefetch" href="/assets/js/92.a495ba22.js"><link rel="prefetch" href="/assets/js/93.6b284fad.js"><link rel="prefetch" href="/assets/js/94.9b9c5ef0.js"><link rel="prefetch" href="/assets/js/95.30d4967d.js"><link rel="prefetch" href="/assets/js/96.72960f52.js"><link rel="prefetch" href="/assets/js/97.78eae4fe.js"><link rel="prefetch" href="/assets/js/98.8cc038d2.js"><link rel="prefetch" href="/assets/js/99.2f47800e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.04d17316.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210131112211.jpg" alt="FSA全栈行动" class="logo"> <span class="site-name can-hide">FSA全栈行动</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端" class="dropdown-title"><a href="/mobile/" class="link-title">移动端</a> <span class="title" style="display:none;">移动端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>移动端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/61d6a8/" class="nav-link">Android</a></li><li class="dropdown-subitem"><a href="/pages/cb27eb/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/pages/61cc74/" class="nav-link">Flutter</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/kotlin/" class="nav-link">《Kotlin快速入门进阶》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/" class="nav-link">《Flutter从入门到实战》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/lxf/review/" class="nav-link">《Flutter复习》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/backend/" class="nav-link">后端</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="内功心法" class="dropdown-title"><a href="/power/" class="link-title">内功心法</a> <span class="title" style="display:none;">内功心法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/designpattern/" class="nav-link">《深入浅出设计模式Java版》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/ea5b48/" class="nav-link">逆向</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About" class="dropdown-title"><!----> <span class="title" style="display:;">About</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/LinXunFeng/" class="nav-link">LinXunFeng</a></li><li class="dropdown-item"><!----> <a href="/about/GitLqr/" class="nav-link">GitLqr</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210131111432.png"> <div class="blogger-info"><h3>公众号：FSA全栈行动</h3> <span>记录学习过程中的知识</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端" class="dropdown-title"><a href="/mobile/" class="link-title">移动端</a> <span class="title" style="display:none;">移动端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>移动端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/61d6a8/" class="nav-link">Android</a></li><li class="dropdown-subitem"><a href="/pages/cb27eb/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/pages/61cc74/" class="nav-link">Flutter</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/kotlin/" class="nav-link">《Kotlin快速入门进阶》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/" class="nav-link">《Flutter从入门到实战》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/lxf/review/" class="nav-link">《Flutter复习》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/backend/" class="nav-link">后端</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="内功心法" class="dropdown-title"><a href="/power/" class="link-title">内功心法</a> <span class="title" style="display:none;">内功心法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/designpattern/" class="nav-link">《深入浅出设计模式Java版》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/ea5b48/" class="nav-link">逆向</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About" class="dropdown-title"><!----> <span class="title" style="display:;">About</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/LinXunFeng/" class="nav-link">LinXunFeng</a></li><li class="dropdown-item"><!----> <a href="/about/GitLqr/" class="nav-link">GitLqr</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>AndroidUI</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/61d6a8/" class="sidebar-link">RecyclerView遇到notifyDataSetChanged无效时的解决方案</a></li><li><a href="/pages/2a27e8/" class="sidebar-link">Material Design 兼容性控件学习</a></li><li><a href="/pages/5c8459/" class="sidebar-link">RecyclerView之ItemDecoration</a></li><li><a href="/pages/79e15e/" class="sidebar-link">RecyclerView之使用ItemTouchHelper实现交互动画</a></li><li><a href="/pages/ba99fe/" class="sidebar-link">MaterialDesign之SearchView全面解锁</a></li><li><a href="/pages/fe4c94/" class="sidebar-link">MaterialDesign之学一波Palette</a></li><li><a href="/pages/c7d38a/" aria-current="page" class="active sidebar-link">MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/c7d38a/#一、简述" class="sidebar-link">一、简述</a></li><li class="sidebar-sub-header level2"><a href="/pages/c7d38a/#二、使用" class="sidebar-link">二、使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/c7d38a/#_1、coordinatorlayout" class="sidebar-link">1、CoordinatorLayout</a></li><li class="sidebar-sub-header level3"><a href="/pages/c7d38a/#_2、appbarlayout" class="sidebar-link">2、AppBarLayout</a></li><li class="sidebar-sub-header level3"><a href="/pages/c7d38a/#_3、collapsingtoolbarlayout" class="sidebar-link">3、CollapsingToolbarLayout</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/c7d38a/#最后附上demo链接" class="sidebar-link">最后附上Demo链接</a></li></ul></li><li><a href="/pages/0f2500/" class="sidebar-link">MaterialDesign之对TabLayout的探索</a></li><li><a href="/pages/7776d6/" class="sidebar-link">多RecyclerView同步滚动</a></li><li><a href="/pages/b1db2f/" class="sidebar-link">Libgdx - 使用pixmap绘制透明圆角矩形</a></li><li><a href="/pages/a39d04/" class="sidebar-link">使用PorterDuff解决clipPath无法抗锯齿问题</a></li><li><a href="/pages/a90e8e/" class="sidebar-link">解决ImageView图片挤压问题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android第三方SDK</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android混淆</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android仓库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android系统开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android源码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android注解AOP</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android脚本</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>AndroidTv开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>AndroidNDK</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android音视频</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android热修复</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android云游戏</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android插件化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOSUI</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS底层原理与应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS组件化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS音视频</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS疑难杂症</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS之Swift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS之RxSwift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS开源项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS逆向</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter开发</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/mobile/#移动端" data-v-06225672>移动端</a></li><li data-v-06225672><a href="/mobile/#AndroidUI" data-v-06225672>AndroidUI</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/GitLqr" target="_blank" title="作者" class="beLink" data-v-06225672>GitLqr</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2017-06-13</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习<!----></h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <center>欢迎关注微信公众号：<a href="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/FSA_QR_bottom.png">[FSA全栈行动 👋]</a><center>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h2 id="一、简述"><a href="#一、简述" class="header-anchor">#</a> 一、简述</h2> <p>本文要介绍的AppBarLayout与CollapsingToolbarLayout均是随MaterialDesign出现的新控件，两者的作用呢，可以说就是为了“增强”Toolbar的吧，它们的出现使得Toolbar不再只是那个木讷的&quot;ActionBar&quot;，而是一个真正有灵性，有活力的APP工具条。下面就来看看它们是怎么使用的吧。</p> <h2 id="二、使用"><a href="#二、使用" class="header-anchor">#</a> 二、使用</h2> <h3 id="_1、coordinatorlayout"><a href="#_1、coordinatorlayout" class="header-anchor">#</a> 1、CoordinatorLayout</h3> <p>在使用AppBarLayout与CollapsingToolbarLayout之前，先来说说这个CoordinatorLayout。CoordinatorLayout直译为“协调布局”，顾名思义，它就是用来协调子布局及控件的，要使用它，则必须把它设置为整个布局的根，同时，通过对“特殊子控件”设置app:appbar_scrolling_view_behavior属性的值，进而来协调子控件在整个布局中的显示位置。本文不对其进行深入讲解，我们这里只需知道，要使用AppbarLayout来“增强”Toolbar，就需要用到CoordinatorLayout即可。CoordinatorLayout的使用示例代码：</p> <div class="language- extra-class"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;256dp&quot;&gt;
+        ...
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+
+    &lt;android.support.v4.widget.NestedScrollView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;&gt;
+
+        &lt;WebView
+            android:id=&quot;@+id/webview&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;/&gt;
+
+    &lt;/android.support.v4.widget.NestedScrollView&gt;
+
+
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p>从上面的代码中，可以知道，这里只对NestedScrollView控件设置了app:appbar_scrolling_view_behavior属性，没错，NestedScrollView是上面说到的“特殊子控件”，像这样的“特殊子控件”有3个，分别是RecyclerView、ViewPager、NestedScrollView，它们的使用基本是一样的，app:appbar_scrolling_view_behavior属性也只对这3个“特殊子控件”有效。对于这个NestedScrollView，你可以认为，它就是ScrollView的增强版而已。好了，下面就开始介绍本文的主角。</p> <h3 id="_2、appbarlayout"><a href="#_2、appbarlayout" class="header-anchor">#</a> 2、AppBarLayout</h3> <p>下面是官方文档中对AppBarLayout的描述：</p> <blockquote><p>AppBarLayout是一个垂直的LinearLayout，实现了Material Design中app bar的scrolling gestures特性。AppBarLayout的子View应该声明想要具有的“滚动行为”，这可以通过layout_scrollFlags属性或是setScrollFlags()方法来指定。
+AppBarLayout只有作为CoordinatorLayout的直接子View时才能正常工作，
+为了让AppBarLayout能够知道何时滚动其子View，我们还应该在CoordinatorLayout布局中提供一个可滚动View，我们称之为scrolling view。scrolling view和AppBarLayout之间的关联，通过将scrolling view的Behavior设为AppBarLayout.ScrollingViewBehavior来建立。</p></blockquote> <p>结合上面CoordinatorLayout部分中贴出的代码，这段描述的后半段是不难理解的，而比较难理解的应该是layout_scrollFlags属性，描述中的scrolling view就是上面所说的“特殊子控件”。要牢记，描述中说的是对AppbarLayout的直接子控件设置layout_scrollFlags属性，下面来看看都有哪些ayout_scrollFlags属性：</p> <table><thead><tr><th>scrollFlags的属性值</th> <th>作用</th></tr></thead> <tbody><tr><td>scroll</td> <td>让AppBarLayout与scrolling view合为一体，当scrolling view滚动时，AppBarLayout也跟着一起滚动。这是“增强”Toolbar的一个必需取值，可以跟其他值一起使用，从而实现不同的“增强”效果。单独使用scroll的话，其效果就类似给ListView加了一个HeaderView。</td></tr></tbody></table> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;android.support.v7.widget.Toolbar
+            android:id=&quot;@+id/toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;?attr/actionBarSize&quot;
+            app:title=&quot;CSDN_LQR&quot;
+            app:layout_scrollFlags=&quot;scroll&quot;
+            app:titleTextColor=&quot;@android:color/white&quot;/&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+    ...
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084430.gif" alt="scroll"></p> <table><thead><tr><th>scrollFlags的属性值</th> <th>作用</th></tr></thead> <tbody><tr><td>scroll | enterAlways</td> <td>当scrolling view向上滚动时，AppBarLayout也跟着一起滚出屏幕，一旦scrolling view向下滚动，AppBarLayout也跟着一起滚入屏幕。</td></tr></tbody></table> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;android.support.v7.widget.Toolbar
+            android:id=&quot;@+id/toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;?attr/actionBarSize&quot;
+            app:layout_scrollFlags=&quot;scroll|enterAlways&quot;
+            app:title=&quot;CSDN_LQR&quot;
+            app:titleTextColor=&quot;@android:color/white&quot;/&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+    ...
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084449.gif" alt="enterAlways"></p> <table><thead><tr><th>scrollFlags的属性值</th> <th>作用</th></tr></thead> <tbody><tr><td>scroll | enterAlways | enterAlwaysCollapsed</td> <td>当scrolling view向上滚动时，AppBarLayout也跟着一起滚出屏幕，一旦scrolling view向下滚动，AppBarLayout便先慢慢滚动到折叠高度（即最小高度），直到scrolling view向下滚动到最顶部时，AppBarLayout再先慢慢滚动到原来的高度（此时scrolling view也会再次和AppBarLayout一起滚动）。</td></tr></tbody></table> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:minHeight=&quot;?attr/actionBarSize&quot;&gt;
+
+        &lt;android.support.v7.widget.Toolbar
+            android:id=&quot;@+id/toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;150dp&quot;
+            app:layout_scrollFlags=&quot;scroll|enterAlways|enterAlwaysCollapsed&quot;
+            app:title=&quot;CSDN_LQR&quot;
+            app:titleTextColor=&quot;@android:color/white&quot;/&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+    ...
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084509.gif" alt="enterAlwaysCollapsed"></p> <table><thead><tr><th>scrollFlags的属性值</th> <th>作用</th></tr></thead> <tbody><tr><td>scroll  |  exitUntilCollapsed</td> <td>当scrolling view向上滚动时，AppBarLayout也跟着一起滚出屏幕，直到达到了折叠高度（即最小高度），此时AppBarLayout不再滚动，也就是不完全滚出屏幕，而当scrolling view向下滚动到最顶部时，AppBarLayout才会再随scrolling view一起滚动，直到原来的高度。</td></tr></tbody></table> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;android.support.v7.widget.Toolbar
+            android:id=&quot;@+id/toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;150dp&quot;
+            android:minHeight=&quot;?attr/actionBarSize&quot;
+            app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed&quot;
+            app:title=&quot;CSDN_LQR&quot;
+            app:titleTextColor=&quot;@android:color/white&quot;/&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+    ...
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084527.gif" alt="exitUntilCollapsed"></p> <table><thead><tr><th>scrollFlags的属性值</th> <th>作用</th></tr></thead> <tbody><tr><td>scroll  | snap</td> <td>snap有仓促的意思，效果同它的意思一样，当scrolling view处于无法再向下滚动的状态时（即已经到顶部了），此时向上滚动scrolling view，AppBarLayout将一次全部滚出屏幕，或向下滚动scrolling view，AppBarLayout将一次全部滚入屏幕。有一种引力的感觉。</td></tr></tbody></table> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;&gt;
+
+        &lt;android.support.v7.widget.Toolbar
+            android:id=&quot;@+id/toolbar&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;150dp&quot;
+            android:minHeight=&quot;?attr/actionBarSize&quot;
+            app:layout_scrollFlags=&quot;scroll|snap&quot;
+            app:title=&quot;CSDN_LQR&quot;
+            app:titleTextColor=&quot;@android:color/white&quot;/&gt;
+
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+    ...
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084551.gif" alt="snap"></p> <p>好啦，AppBarLayout对Toolbar的“增强”就差不多这样了，不过要纠正一点，其实AppBarLayout并不只是对Toolbar&quot;增强&quot;，对于其他控件也是一样的，只是AppBarLayout与Toolbar的搭配比较常见而已。下面接着来看看CollapsingToolbarLayout具体可以对Toolbar做到怎样的“增强”。</p> <h3 id="_3、collapsingtoolbarlayout"><a href="#_3、collapsingtoolbarlayout" class="header-anchor">#</a> 3、CollapsingToolbarLayout</h3> <p>CollapsingToolbarLayout对Toolbar的“增强”就是把Toolbar变成可折叠的，使其具有更多的交互花样（其实也就是更多的交互动画），我们先来看看可以实现的效果：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084615.gif" alt="CollapsingToolbarLayout"></p> <p>要实现上图的效果，需要跟AppBarLayout一起使用，CollapsingToolbarLayout的使用很简单，直接包裹Toolbar即可，其中可以增加一个ImageView控件来作为CollapsingToolbarLayout的“背景”，其实CollapsingToolbarLayout本身是一个FrameLayout，所以其子控件的摆放就是从左上角开始，一个个叠加起来。不过，其中的Toolbar默认一开始是隐藏的。</p> <div class="language- extra-class"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;android.support.design.widget.CoordinatorLayout
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;&gt;
+
+    &lt;android.support.design.widget.AppBarLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;256dp&quot;&gt;
+
+        &lt;android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed&quot;&gt;
+
+            &lt;ImageView
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;match_parent&quot;
+                android:scaleType=&quot;centerCrop&quot;
+                android:src=&quot;@mipmap/palette&quot;/&gt;
+
+            &lt;android.support.v7.widget.Toolbar
+                android:id=&quot;@+id/toolbar&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;?attr/actionBarSize&quot;
+                app:title=&quot;CSDN_LQR&quot;
+                app:titleTextColor=&quot;@android:color/white&quot;/&gt;
+        &lt;/android.support.design.widget.CollapsingToolbarLayout&gt;
+    &lt;/android.support.design.widget.AppBarLayout&gt;
+    ...
+&lt;/android.support.design.widget.CoordinatorLayout&gt;
+</code></pre></div><p>这代码中有个细节需要注意一下，你可以发现，代码中不再对Toolbar设置app:layout_scrollFlags属性，而是给CollapsingToolbarLayout控件设置了。这不奇怪，因为上面已经说了，app:layout_scrollFlags属性是对AppBarLayout的直接子控件设置的。先来看看效果怎样：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084639.gif" alt=""></p> <p>这是默认的效果，可以看到滚动过程中，ImageView和大标题一起向上或向下滚动，其实这个过程中，只有当CollapsingToolbarLayout折叠时，Toolbar才会显示出来，大标题执行了缩放、位置和透明等动画，而Toolbar执行透明动画，两标题重合或分离，看起来好像就只有一个标题一样。此外，上面的布局代码中是有给Toolbar设置样式的，但并没有起作用。CollapsingToolbarLayout提供了文字样式属性，可以分别对大标题（展开标题）与小标题（折叠标题）的文字样式进行设置。</p> <p>style.xml中文字样式代码如下：</p> <div class="language- extra-class"><pre><code>&lt;!--CollapsingToolbarLayout展开时标题文字样式--&gt;
+&lt;style name=&quot;ExpandedTitleTextAppearance&quot; parent=&quot;TextAppearance.AppCompat.Title&quot;&gt;
+    &lt;item name=&quot;android:textSize&quot;&gt;30sp&lt;/item&gt;
+    &lt;item name=&quot;android:textColor&quot;&gt;#fff&lt;/item&gt;
+&lt;/style&gt;
+&lt;!--CollapsingToolbarLayout折叠时标题文字样式--&gt;
+&lt;style name=&quot;CollapsedTitleTextAppearance&quot; parent=&quot;TextAppearance.AppCompat.Title&quot;&gt;
+    &lt;item name=&quot;android:textSize&quot;&gt;15sp&lt;/item&gt;
+    &lt;item name=&quot;android:textColor&quot;&gt;#000&lt;/item&gt;
+&lt;/style&gt;
+</code></pre></div><p>对CollapsingToolbarLayout分别设置展开标题样式与折叠标题样式</p> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CollapsingToolbarLayout
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed&quot;
+    app:collapsedTitleTextAppearance=&quot;@style/CollapsedTitleTextAppearance&quot;
+    app:expandedTitleTextAppearance=&quot;@style/ExpandedTitleTextAppearance&quot;
+    &gt;
+    ...
+&lt;/android.support.design.widget.CollapsingToolbarLayout&gt;
+</code></pre></div><p>效果：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084702.gif" alt=""></p> <p>这样还不够，如果想在CollapsingToolbarLayout折叠时，背景变为纯色、状态栏也一起变色的话，可以通过如下代码设置：</p> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CollapsingToolbarLayout
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed&quot;
+    app:collapsedTitleTextAppearance=&quot;@style/CollapsedTitleTextAppearance&quot;
+    app:expandedTitleTextAppearance=&quot;@style/ExpandedTitleTextAppearance&quot;
+    app:contentScrim=&quot;?attr/colorPrimary&quot;
+    app:statusBarScrim=&quot;?attr/colorPrimaryDark&quot;
+    &gt;
+    ...
+&lt;/android.support.design.widget.CollapsingToolbarLayout&gt;
+</code></pre></div><p>其中contentScrim设置的是折叠时，CollapsingToolbarLayout的背景色。statusBarScrim设置的是折叠时，状态栏的颜色，可以达到沉浸式的效果，不过这个属性需要Android 5.0以上才能支持，而且，有的国产机对状态栏做了限制，没办法生效，比如锤子的系统，状态栏一起是半透明色，且该属性无法生效，所以，这个效果需视手机及系统版本而定。来看下效果如何：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084722.gif" alt=""></p> <p>呀，马马虎虎，不过还差点，需要给图片“背景”设置视差效果，还有大标题文字底部居中显示。给图片“背景”设置视差效果可以通过设置app:layout_collapseMode属性来完成，这个属性只要是CollapsingToolbarLayout的子控件就有，有三种取值，分别是：none、pin、parallax。其中parallax的效果是在CollapsingToolbarLayout折叠时，此布局（或控件）会有视差折叠效果；pin的效果是在CollapsingToolbarLayout折叠后，此布局（或控件）将固定在顶部。none是默认值，即没有效果，实话说，我感觉pin跟none没什么区别（如果觉得我说的不对，请不吝赐教）。至于标题的位置，可以通过app:collapsedTitleGravity和app:collapsedTitleGravity来配置，用法跟layout_gravity一样，就不说了，贴下代码，随便看下效果。</p> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.CollapsingToolbarLayout
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:collapsedTitleTextAppearance=&quot;@style/CollapsedTitleTextAppearance&quot;
+    app:contentScrim=&quot;?attr/colorPrimary&quot;
+    app:expandedTitleTextAppearance=&quot;@style/ExpandedTitleTextAppearance&quot;
+    app:layout_scrollFlags=&quot;scroll|exitUntilCollapsed&quot;
+    app:statusBarScrim=&quot;?attr/colorPrimaryDark&quot;
+    app:collapsedTitleGravity=&quot;start&quot;
+    app:expandedTitleGravity=&quot;center_horizontal|bottom&quot; &gt;
+
+    &lt;ImageView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:scaleType=&quot;centerCrop&quot;
+        android:src=&quot;@mipmap/palette&quot;
+        app:layout_collapseMode=&quot;parallax&quot;/&gt;
+
+    &lt;android.support.v7.widget.Toolbar
+        android:id=&quot;@+id/toolbar&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;?attr/actionBarSize&quot;
+        app:title=&quot;CSDN_LQR&quot;
+        app:titleTextColor=&quot;@android:color/white&quot;
+        app:layout_collapseMode=&quot;pin&quot;/&gt;
+&lt;/android.support.design.widget.CollapsingToolbarLayout&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210107084746.gif" alt=""></p> <h2 id="最后附上demo链接"><a href="#最后附上demo链接" class="header-anchor">#</a> 最后附上Demo链接</h2> <p><a href="https://github.com/GitLqr/MaterialDesignDemo" target="_blank" rel="noopener noreferrer">https://github.com/GitLqr/MaterialDesignDemo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <center><img style="width:100%;" src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/FSA_QR_bottom.png"/></center>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=MaterialDesign" title="标签">#MaterialDesign</a><a href="/tags/?tag=AppBarLayout" title="标签">#AppBarLayout</a><a href="/tags/?tag=CollapsingToolbarLayout" title="标签">#CollapsingToolbarLayout</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/fe4c94/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">MaterialDesign之学一波Palette</div></a> <a href="/pages/0f2500/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">MaterialDesign之对TabLayout的探索</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/fe4c94/" class="prev">MaterialDesign之学一波Palette</a></span> <span class="next"><a href="/pages/0f2500/">MaterialDesign之对TabLayout的探索</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/f66719/"><div>
+            Flutter - 危！3.24版本苹果审核被拒！
+            <!----></div></a> <span class="date">11-13</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/77efcc/"><div>
+            Flutter - 轻松搞定炫酷视差(Parallax)效果
+            <!----></div></a> <span class="date">09-21</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/500d17/"><div>
+            Flutter - 轻松实现PageView卡片偏移效果
+            <!----></div></a> <span class="date">09-08</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="https://github.com/LinXunFeng" title="GitHub for LinXunFeng" target="_blank" class="iconfont icon-githubsquare"></a><a href="mailto:linxunfeng@yeah.net" title="email for LinXunFeng" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/GitLqr" title="GitHub for GitLqr" target="_blank" class="iconfont icon-github-circle"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2020-2024
+    <span><a href="/about" target="_blank">FSA全栈行动</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4186ca70.js" defer></script><script src="/assets/js/2.7c3035d6.js" defer></script><script src="/assets/js/20.60f81383.js" defer></script>
+  </body>
+</html>
