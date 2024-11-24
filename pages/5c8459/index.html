@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RecyclerView之ItemDecoration | FSA全栈行动</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-3568502583266202" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/global.js"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?885476c2eae58d4aee1ab7fcfb548adb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+      </script>
+    <meta name="description" content="分享Android、iOS、Python、Vue等技术资讯、学习笔记，成功有梦想的全栈工程师，欢迎关注。">
+    <meta name="keywords" content="FSA全栈行动,LinXunFeng,GitLqr,全栈技术博客,移动端,web前端,后端开发,前端框架,web前端,Android框架,iOS框架,Flutter框架,Python框架,Vue框架,技术文档,学习,面试,Java,Kotlin,object-c,Swift,Kotlin,Dart,JavaScript,js,ES6,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="code-Cyx4xlZmzI">
+    <meta name="google-site-verification" content="_0KO4KbxdSwB-TPRQ8bRqmML8dnrx5G82GhQNZlR4HU">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.04d17316.css" as="style"><link rel="preload" href="/assets/js/app.686005d4.js" as="script"><link rel="preload" href="/assets/js/2.7c3035d6.js" as="script"><link rel="preload" href="/assets/js/16.c7aca3d6.js" as="script"><link rel="prefetch" href="/assets/js/10.2e163faf.js"><link rel="prefetch" href="/assets/js/100.1cf85e72.js"><link rel="prefetch" href="/assets/js/101.759f1e68.js"><link rel="prefetch" href="/assets/js/102.f29f33d0.js"><link rel="prefetch" href="/assets/js/103.b2054ba5.js"><link rel="prefetch" href="/assets/js/104.39135eea.js"><link rel="prefetch" href="/assets/js/105.ca4fa7b6.js"><link rel="prefetch" href="/assets/js/106.8c051068.js"><link rel="prefetch" href="/assets/js/107.22e9b792.js"><link rel="prefetch" href="/assets/js/108.e6886aa2.js"><link rel="prefetch" href="/assets/js/109.8781cedc.js"><link rel="prefetch" href="/assets/js/11.ffe2eaf9.js"><link rel="prefetch" href="/assets/js/110.613e113e.js"><link rel="prefetch" href="/assets/js/111.7fd7cfa3.js"><link rel="prefetch" href="/assets/js/112.bb1a4000.js"><link rel="prefetch" href="/assets/js/113.cd6a977f.js"><link rel="prefetch" href="/assets/js/114.b8d81000.js"><link rel="prefetch" href="/assets/js/115.223ca2dc.js"><link rel="prefetch" href="/assets/js/116.b0e467c1.js"><link rel="prefetch" href="/assets/js/117.6abf027e.js"><link rel="prefetch" href="/assets/js/118.e4a5a34b.js"><link rel="prefetch" href="/assets/js/119.b182a7f1.js"><link rel="prefetch" href="/assets/js/12.89984f36.js"><link rel="prefetch" href="/assets/js/120.25fc9579.js"><link rel="prefetch" href="/assets/js/121.59c401c2.js"><link rel="prefetch" href="/assets/js/122.a614ad50.js"><link rel="prefetch" href="/assets/js/123.974d2b31.js"><link rel="prefetch" href="/assets/js/124.a05e534b.js"><link rel="prefetch" href="/assets/js/125.e4548c74.js"><link rel="prefetch" href="/assets/js/126.1e1189eb.js"><link rel="prefetch" href="/assets/js/127.424510cd.js"><link rel="prefetch" href="/assets/js/128.1f4a8e34.js"><link rel="prefetch" href="/assets/js/129.4184d277.js"><link rel="prefetch" href="/assets/js/13.eedcba36.js"><link rel="prefetch" href="/assets/js/130.8e072106.js"><link rel="prefetch" href="/assets/js/131.520de181.js"><link rel="prefetch" href="/assets/js/132.dc8a7c55.js"><link rel="prefetch" href="/assets/js/133.60bee8f1.js"><link rel="prefetch" href="/assets/js/134.7add7b52.js"><link rel="prefetch" href="/assets/js/135.a0916b00.js"><link rel="prefetch" href="/assets/js/136.af28838b.js"><link rel="prefetch" href="/assets/js/137.b1bc3b13.js"><link rel="prefetch" href="/assets/js/138.55aa341a.js"><link rel="prefetch" href="/assets/js/139.03b5f7bf.js"><link rel="prefetch" href="/assets/js/14.7a93d753.js"><link rel="prefetch" href="/assets/js/140.690c1340.js"><link rel="prefetch" href="/assets/js/141.c35f2fa7.js"><link rel="prefetch" href="/assets/js/142.1068f32d.js"><link rel="prefetch" href="/assets/js/143.e2755ea1.js"><link rel="prefetch" href="/assets/js/144.c651a81e.js"><link rel="prefetch" href="/assets/js/145.78366984.js"><link rel="prefetch" href="/assets/js/146.83151f64.js"><link rel="prefetch" href="/assets/js/147.1860c9e8.js"><link rel="prefetch" href="/assets/js/148.2ecc958b.js"><link rel="prefetch" href="/assets/js/149.e70ed96c.js"><link rel="prefetch" href="/assets/js/15.79ec5c92.js"><link rel="prefetch" href="/assets/js/150.7ec4fd25.js"><link rel="prefetch" href="/assets/js/151.446a607d.js"><link rel="prefetch" href="/assets/js/152.0f4a4be0.js"><link rel="prefetch" href="/assets/js/153.a28139ca.js"><link rel="prefetch" href="/assets/js/154.3c61161f.js"><link rel="prefetch" href="/assets/js/155.e5a0a813.js"><link rel="prefetch" href="/assets/js/156.0645ddd6.js"><link rel="prefetch" href="/assets/js/157.db1e3600.js"><link rel="prefetch" href="/assets/js/158.6ff6c7e6.js"><link rel="prefetch" href="/assets/js/159.aa9a6060.js"><link rel="prefetch" href="/assets/js/160.d2fb14cc.js"><link rel="prefetch" href="/assets/js/161.b6666dfb.js"><link rel="prefetch" href="/assets/js/162.27c5c10b.js"><link rel="prefetch" href="/assets/js/163.232931dd.js"><link rel="prefetch" href="/assets/js/164.56b7f317.js"><link rel="prefetch" href="/assets/js/165.bbdc2b3e.js"><link rel="prefetch" href="/assets/js/166.fc335c52.js"><link rel="prefetch" href="/assets/js/167.c5f00fd4.js"><link rel="prefetch" href="/assets/js/168.f4318621.js"><link rel="prefetch" href="/assets/js/169.c01698c7.js"><link rel="prefetch" href="/assets/js/17.5e3fdba7.js"><link rel="prefetch" href="/assets/js/170.10d00236.js"><link rel="prefetch" href="/assets/js/171.892e1c2e.js"><link rel="prefetch" href="/assets/js/172.45732853.js"><link rel="prefetch" href="/assets/js/173.11da543c.js"><link rel="prefetch" href="/assets/js/174.60e4735d.js"><link rel="prefetch" href="/assets/js/175.2d233a35.js"><link rel="prefetch" href="/assets/js/176.a0e95eb7.js"><link rel="prefetch" href="/assets/js/177.d5e9c00d.js"><link rel="prefetch" href="/assets/js/178.25d11ac1.js"><link rel="prefetch" href="/assets/js/179.58d91280.js"><link rel="prefetch" href="/assets/js/18.1aeeb629.js"><link rel="prefetch" href="/assets/js/180.217b957f.js"><link rel="prefetch" href="/assets/js/181.00aef73f.js"><link rel="prefetch" href="/assets/js/182.6fc1acd7.js"><link rel="prefetch" href="/assets/js/183.9ddb84bf.js"><link rel="prefetch" href="/assets/js/184.9d36e7b7.js"><link rel="prefetch" href="/assets/js/185.4c4ff0f7.js"><link rel="prefetch" href="/assets/js/186.d27e90cc.js"><link rel="prefetch" href="/assets/js/187.370c4521.js"><link rel="prefetch" href="/assets/js/188.6adebd65.js"><link rel="prefetch" href="/assets/js/189.c31e68f0.js"><link rel="prefetch" href="/assets/js/19.dbbc028c.js"><link rel="prefetch" href="/assets/js/190.e6de55b5.js"><link rel="prefetch" href="/assets/js/191.ebeb5f3c.js"><link rel="prefetch" href="/assets/js/192.0a2e1878.js"><link rel="prefetch" href="/assets/js/193.f2cbc95a.js"><link rel="prefetch" href="/assets/js/194.7c308691.js"><link rel="prefetch" href="/assets/js/195.84ea7a43.js"><link rel="prefetch" href="/assets/js/196.25d77c5b.js"><link rel="prefetch" href="/assets/js/197.ba70366d.js"><link rel="prefetch" href="/assets/js/198.28164993.js"><link rel="prefetch" href="/assets/js/199.6789d794.js"><link rel="prefetch" href="/assets/js/20.51a5de06.js"><link rel="prefetch" href="/assets/js/200.3740c1b6.js"><link rel="prefetch" href="/assets/js/201.910e87e4.js"><link rel="prefetch" href="/assets/js/202.08a3177b.js"><link rel="prefetch" href="/assets/js/203.666f84f3.js"><link rel="prefetch" href="/assets/js/204.58c40329.js"><link rel="prefetch" href="/assets/js/205.baa51e23.js"><link rel="prefetch" href="/assets/js/206.9a22d5bc.js"><link rel="prefetch" href="/assets/js/207.01362188.js"><link rel="prefetch" href="/assets/js/208.894af82a.js"><link rel="prefetch" href="/assets/js/209.c50fd8dc.js"><link rel="prefetch" href="/assets/js/21.e70f704e.js"><link rel="prefetch" href="/assets/js/210.c1146abf.js"><link rel="prefetch" href="/assets/js/211.80f01a3c.js"><link rel="prefetch" href="/assets/js/212.de95cc7a.js"><link rel="prefetch" href="/assets/js/213.3833bdd2.js"><link rel="prefetch" href="/assets/js/214.a3caeb18.js"><link rel="prefetch" href="/assets/js/215.8b814346.js"><link rel="prefetch" href="/assets/js/216.9d845eb4.js"><link rel="prefetch" href="/assets/js/217.3b682a08.js"><link rel="prefetch" href="/assets/js/218.83a8b5bb.js"><link rel="prefetch" href="/assets/js/219.72d6deb2.js"><link rel="prefetch" href="/assets/js/22.fa737e62.js"><link rel="prefetch" href="/assets/js/220.a7a89f33.js"><link rel="prefetch" href="/assets/js/221.8718d7db.js"><link rel="prefetch" href="/assets/js/222.c859e346.js"><link rel="prefetch" href="/assets/js/223.99876210.js"><link rel="prefetch" href="/assets/js/224.ed9ece7c.js"><link rel="prefetch" href="/assets/js/225.7c556c11.js"><link rel="prefetch" href="/assets/js/226.5c67edf9.js"><link rel="prefetch" href="/assets/js/227.34a7feef.js"><link rel="prefetch" href="/assets/js/228.011d4aca.js"><link rel="prefetch" href="/assets/js/229.d3053748.js"><link rel="prefetch" href="/assets/js/23.fbd56855.js"><link rel="prefetch" href="/assets/js/230.2a22a9cf.js"><link rel="prefetch" href="/assets/js/231.60cb37b0.js"><link rel="prefetch" href="/assets/js/232.61191ceb.js"><link rel="prefetch" href="/assets/js/233.2546795e.js"><link rel="prefetch" href="/assets/js/234.12542c69.js"><link rel="prefetch" href="/assets/js/235.d34ec453.js"><link rel="prefetch" href="/assets/js/236.1fb6af46.js"><link rel="prefetch" href="/assets/js/237.256e19cc.js"><link rel="prefetch" href="/assets/js/238.94cf2742.js"><link rel="prefetch" href="/assets/js/239.7a086973.js"><link rel="prefetch" href="/assets/js/24.49933827.js"><link rel="prefetch" href="/assets/js/240.81114559.js"><link rel="prefetch" href="/assets/js/241.403ed641.js"><link rel="prefetch" href="/assets/js/242.07a8e132.js"><link rel="prefetch" href="/assets/js/243.14d8abdb.js"><link rel="prefetch" href="/assets/js/244.73f952ea.js"><link rel="prefetch" href="/assets/js/245.10bd6e1b.js"><link rel="prefetch" href="/assets/js/246.caa4c426.js"><link rel="prefetch" href="/assets/js/247.c8a8d8c0.js"><link rel="prefetch" href="/assets/js/248.a9d7c601.js"><link rel="prefetch" href="/assets/js/25.95bc3d96.js"><link rel="prefetch" href="/assets/js/26.51e88060.js"><link rel="prefetch" href="/assets/js/27.93ceaf69.js"><link rel="prefetch" href="/assets/js/28.98658fad.js"><link rel="prefetch" href="/assets/js/29.6ddd6c75.js"><link rel="prefetch" href="/assets/js/3.13893726.js"><link rel="prefetch" href="/assets/js/30.71d9e7d6.js"><link rel="prefetch" href="/assets/js/31.87f45f94.js"><link rel="prefetch" href="/assets/js/32.97670466.js"><link rel="prefetch" href="/assets/js/33.8f0fc1ed.js"><link rel="prefetch" href="/assets/js/34.9e5ceb82.js"><link rel="prefetch" href="/assets/js/35.428722ad.js"><link rel="prefetch" href="/assets/js/36.41b51f6c.js"><link rel="prefetch" href="/assets/js/37.f4dd9d75.js"><link rel="prefetch" href="/assets/js/38.4223fc2b.js"><link rel="prefetch" href="/assets/js/39.ba33be6d.js"><link rel="prefetch" href="/assets/js/4.f7dc433c.js"><link rel="prefetch" href="/assets/js/40.a962946c.js"><link rel="prefetch" href="/assets/js/41.7f0bcd0a.js"><link rel="prefetch" href="/assets/js/42.0ec42041.js"><link rel="prefetch" href="/assets/js/43.c92942e7.js"><link rel="prefetch" href="/assets/js/44.76befdc6.js"><link rel="prefetch" href="/assets/js/45.88b7d335.js"><link rel="prefetch" href="/assets/js/46.84feaafc.js"><link rel="prefetch" href="/assets/js/47.a8d57446.js"><link rel="prefetch" href="/assets/js/48.82a19dc5.js"><link rel="prefetch" href="/assets/js/49.d8a23ee2.js"><link rel="prefetch" href="/assets/js/5.807af604.js"><link rel="prefetch" href="/assets/js/50.91efb7df.js"><link rel="prefetch" href="/assets/js/51.b9ba18f7.js"><link rel="prefetch" href="/assets/js/52.3e719ec9.js"><link rel="prefetch" href="/assets/js/53.d6676ab3.js"><link rel="prefetch" href="/assets/js/54.f053b9cf.js"><link rel="prefetch" href="/assets/js/55.ca58a222.js"><link rel="prefetch" href="/assets/js/56.7cd797c3.js"><link rel="prefetch" href="/assets/js/57.0bb67c6d.js"><link rel="prefetch" href="/assets/js/58.70914d63.js"><link rel="prefetch" href="/assets/js/59.0e552c49.js"><link rel="prefetch" href="/assets/js/6.a31fcaa5.js"><link rel="prefetch" href="/assets/js/60.1b2d473d.js"><link rel="prefetch" href="/assets/js/61.53817796.js"><link rel="prefetch" href="/assets/js/62.e0e2273f.js"><link rel="prefetch" href="/assets/js/63.b8232360.js"><link rel="prefetch" href="/assets/js/64.eeb341aa.js"><link rel="prefetch" href="/assets/js/65.b25b1872.js"><link rel="prefetch" href="/assets/js/66.66efeaff.js"><link rel="prefetch" href="/assets/js/67.4a4333dc.js"><link rel="prefetch" href="/assets/js/68.c2ae221f.js"><link rel="prefetch" href="/assets/js/69.584cb961.js"><link rel="prefetch" href="/assets/js/7.1c0d71a7.js"><link rel="prefetch" href="/assets/js/70.34ed8bd2.js"><link rel="prefetch" href="/assets/js/71.3da4de48.js"><link rel="prefetch" href="/assets/js/72.b80f8705.js"><link rel="prefetch" href="/assets/js/73.41558958.js"><link rel="prefetch" href="/assets/js/74.ca5b7745.js"><link rel="prefetch" href="/assets/js/75.4d50614e.js"><link rel="prefetch" href="/assets/js/76.082046b5.js"><link rel="prefetch" href="/assets/js/77.5a0d31b9.js"><link rel="prefetch" href="/assets/js/78.af5fc05d.js"><link rel="prefetch" href="/assets/js/79.2021a1c1.js"><link rel="prefetch" href="/assets/js/8.60caa592.js"><link rel="prefetch" href="/assets/js/80.58702890.js"><link rel="prefetch" href="/assets/js/81.98257fc5.js"><link rel="prefetch" href="/assets/js/82.d2ec4f43.js"><link rel="prefetch" href="/assets/js/83.b328c416.js"><link rel="prefetch" href="/assets/js/84.7531b4d2.js"><link rel="prefetch" href="/assets/js/85.a0b1fb20.js"><link rel="prefetch" href="/assets/js/86.d0757050.js"><link rel="prefetch" href="/assets/js/87.8928e569.js"><link rel="prefetch" href="/assets/js/88.e1e59ac9.js"><link rel="prefetch" href="/assets/js/89.9aea3b85.js"><link rel="prefetch" href="/assets/js/9.f7f01d43.js"><link rel="prefetch" href="/assets/js/90.ba53a640.js"><link rel="prefetch" href="/assets/js/91.01546d35.js"><link rel="prefetch" href="/assets/js/92.45e72a27.js"><link rel="prefetch" href="/assets/js/93.43478922.js"><link rel="prefetch" href="/assets/js/94.9b9c5ef0.js"><link rel="prefetch" href="/assets/js/95.30d4967d.js"><link rel="prefetch" href="/assets/js/96.40a9f32b.js"><link rel="prefetch" href="/assets/js/97.b6388c82.js"><link rel="prefetch" href="/assets/js/98.8cc038d2.js"><link rel="prefetch" href="/assets/js/99.2f47800e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.04d17316.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210131112211.jpg" alt="FSA全栈行动" class="logo"> <span class="site-name can-hide">FSA全栈行动</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端" class="dropdown-title"><a href="/mobile/" class="link-title">移动端</a> <span class="title" style="display:none;">移动端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>移动端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/61d6a8/" class="nav-link">Android</a></li><li class="dropdown-subitem"><a href="/pages/cb27eb/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/pages/61cc74/" class="nav-link">Flutter</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/kotlin/" class="nav-link">《Kotlin快速入门进阶》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/" class="nav-link">《Flutter从入门到实战》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/lxf/review/" class="nav-link">《Flutter复习》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/backend/" class="nav-link">后端</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="内功心法" class="dropdown-title"><a href="/power/" class="link-title">内功心法</a> <span class="title" style="display:none;">内功心法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/designpattern/" class="nav-link">《深入浅出设计模式Java版》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/ea5b48/" class="nav-link">逆向</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About" class="dropdown-title"><!----> <span class="title" style="display:;">About</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/LinXunFeng/" class="nav-link">LinXunFeng</a></li><li class="dropdown-item"><!----> <a href="/about/GitLqr/" class="nav-link">GitLqr</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210131111432.png"> <div class="blogger-info"><h3>公众号：FSA全栈行动</h3> <span>记录学习过程中的知识</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端" class="dropdown-title"><a href="/mobile/" class="link-title">移动端</a> <span class="title" style="display:none;">移动端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>移动端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/61d6a8/" class="nav-link">Android</a></li><li class="dropdown-subitem"><a href="/pages/cb27eb/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/pages/61cc74/" class="nav-link">Flutter</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/kotlin/" class="nav-link">《Kotlin快速入门进阶》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/" class="nav-link">《Flutter从入门到实战》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/lxf/review/" class="nav-link">《Flutter复习》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/backend/" class="nav-link">后端</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="内功心法" class="dropdown-title"><a href="/power/" class="link-title">内功心法</a> <span class="title" style="display:none;">内功心法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/designpattern/" class="nav-link">《深入浅出设计模式Java版》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/ea5b48/" class="nav-link">逆向</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About" class="dropdown-title"><!----> <span class="title" style="display:;">About</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/LinXunFeng/" class="nav-link">LinXunFeng</a></li><li class="dropdown-item"><!----> <a href="/about/GitLqr/" class="nav-link">GitLqr</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>AndroidUI</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/61d6a8/" class="sidebar-link">RecyclerView遇到notifyDataSetChanged无效时的解决方案</a></li><li><a href="/pages/2a27e8/" class="sidebar-link">Material Design 兼容性控件学习</a></li><li><a href="/pages/5c8459/" aria-current="page" class="active sidebar-link">RecyclerView之ItemDecoration</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/5c8459/#一、简述" class="sidebar-link">一、简述</a></li><li class="sidebar-sub-header level2"><a href="/pages/5c8459/#二、使用itemdecoration绘制分割线" class="sidebar-link">二、使用ItemDecoration绘制分割线</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_1、自定义itemdecoration" class="sidebar-link">1、自定义ItemDecoration</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_2、重写getitemoffsets-和ondraw" class="sidebar-link">2、重写getItemOffsets()和onDraw()</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_3、解析getitemoffsets-和ondraw" class="sidebar-link">3、解析getItemOffsets()和onDraw()</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_4、-实现-getitemoffsets-和ondraw" class="sidebar-link">4、“实现”getItemOffsets()和onDraw()</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_5、画出一条华丽的分割线" class="sidebar-link">5、画出一条华丽的分割线</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_6、效果" class="sidebar-link">6、效果</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/5c8459/#三、使用itemdecoration绘制表格" class="sidebar-link">三、使用ItemDecoration绘制表格</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_1、分析" class="sidebar-link">1、分析</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_2、实现" class="sidebar-link">2、实现</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_3、效果-有瑕疵" class="sidebar-link">3、效果（有瑕疵）</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_4、修复" class="sidebar-link">4、修复</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_5、效果-几乎没有瑕疵" class="sidebar-link">5、效果（几乎没有瑕疵）</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/5c8459/#四、使用itemdecoration实现侧边字母提示" class="sidebar-link">四、使用ItemDecoration实现侧边字母提示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_1、分析-2" class="sidebar-link">1、分析</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#_2、实现-2" class="sidebar-link">2、实现</a></li><li class="sidebar-sub-header level3"><a href="/pages/5c8459/#最后附上demo链接" class="sidebar-link">最后附上Demo链接</a></li></ul></li></ul></li><li><a href="/pages/79e15e/" class="sidebar-link">RecyclerView之使用ItemTouchHelper实现交互动画</a></li><li><a href="/pages/ba99fe/" class="sidebar-link">MaterialDesign之SearchView全面解锁</a></li><li><a href="/pages/fe4c94/" class="sidebar-link">MaterialDesign之学一波Palette</a></li><li><a href="/pages/c7d38a/" class="sidebar-link">MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习</a></li><li><a href="/pages/0f2500/" class="sidebar-link">MaterialDesign之对TabLayout的探索</a></li><li><a href="/pages/7776d6/" class="sidebar-link">多RecyclerView同步滚动</a></li><li><a href="/pages/b1db2f/" class="sidebar-link">Libgdx - 使用pixmap绘制透明圆角矩形</a></li><li><a href="/pages/a39d04/" class="sidebar-link">使用PorterDuff解决clipPath无法抗锯齿问题</a></li><li><a href="/pages/a90e8e/" class="sidebar-link">解决ImageView图片挤压问题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android第三方SDK</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android混淆</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android仓库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android系统开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android源码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android注解AOP</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android脚本</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>AndroidTv开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>AndroidNDK</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android音视频</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android热修复</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android云游戏</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android插件化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOSUI</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS底层原理与应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS组件化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS音视频</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS疑难杂症</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS之Swift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS之RxSwift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS开源项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS逆向</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter开发</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/mobile/#移动端" data-v-06225672>移动端</a></li><li data-v-06225672><a href="/mobile/#AndroidUI" data-v-06225672>AndroidUI</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/GitLqr" target="_blank" title="作者" class="beLink" data-v-06225672>GitLqr</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2017-05-03</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">RecyclerView之ItemDecoration<!----></h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <center>欢迎关注微信公众号：<a href="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/FSA_QR_bottom.png">[FSA全栈行动 👋]</a><center>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h2 id="一、简述"><a href="#一、简述" class="header-anchor">#</a> 一、简述</h2> <p>说到RecyclerView大家都很熟悉了，相比于ListView，它具有高度解耦、性能优化等优势，而且现在大多数安卓开发者都已经将RecyclerView用来完全替代ListView和GridView，因为它功能十分强大，但往往功能强大的东西，反而不太好控制，例如今天要说的这个ItemDecoration，ItemDecoration是条目装饰，下面来看看它的强大吧。</p> <h2 id="二、使用itemdecoration绘制分割线"><a href="#二、使用itemdecoration绘制分割线" class="header-anchor">#</a> 二、使用ItemDecoration绘制分割线</h2> <p>想想之前的ListView，要加条分割线，那是分分钟解决的小事，只需要在布局文件中对ListView控件设置其divier属性或者在动态中设置divider即可完成，但RecyclerView却没这么简单了，RecyclerView并没有提供任何直接设置分割线的方法，除了在条目布局中加入这种笨方法之外，也就只能通过ItemDecoration来实现了。</p> <h3 id="_1、自定义itemdecoration"><a href="#_1、自定义itemdecoration" class="header-anchor">#</a> 1、自定义ItemDecoration</h3> <p>要使用ItemDecoration，我们得必须先自定义，直接继承ItemDecoration即可。</p> <div class="language- extra-class"><pre><code>public class MyDecorationOne extends RecyclerView.ItemDecoration {
+
+}
+</code></pre></div><h3 id="_2、重写getitemoffsets-和ondraw"><a href="#_2、重写getitemoffsets-和ondraw" class="header-anchor">#</a> 2、重写getItemOffsets()和onDraw()</h3> <p>在实现自定义的装饰效果就必须重写getItemOffsets()和onDraw()。</p> <div class="language- extra-class"><pre><code>public class MyDecorationOne extends RecyclerView.ItemDecoration {
+
+    /**
+     * 画线
+     */
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDraw(c, parent, state);
+    }
+
+    /**
+     * 设置条目周边的偏移量
+     */
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+        
+    }
+}
+</code></pre></div><h3 id="_3、解析getitemoffsets-和ondraw"><a href="#_3、解析getitemoffsets-和ondraw" class="header-anchor">#</a> 3、解析getItemOffsets()和onDraw()</h3> <p>在理清这两个方法的作用之前，先理清下ItemDecoration的含义，直译：条目装饰，顾名思义，ItemDecoration是对Item起到了装饰作用，更准确的说是对item的周边起到了装饰的作用，通过下面的图应该能帮助你理解这话的含义。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210107081833.png" alt=""></p> <p>上图中已经说到了，getItemOffsets()就是设置item周边的偏移量（也就是装饰区域的“宽度”）。而onDraw()才是真正实现装饰的回调方法，通过该方法可以在装饰区域任意画画，这里我们来画条分割线。</p> <h3 id="_4、-实现-getitemoffsets-和ondraw"><a href="#_4、-实现-getitemoffsets-和ondraw" class="header-anchor">#</a> 4、“实现”getItemOffsets()和onDraw()</h3> <p>本例中实现的是线性列表的分割线（即使用LinearLayoutManager）。</p> <p>1）当线性列表是水平方向时，分割线竖直的；当线性列表是竖直方向时，分割线是水平的。</p> <p>2）当画竖直分割线时，需要在item的右边偏移出一条线的宽度；当画水平分割线时，需要在item的下边偏移出一条线的高度。</p> <div class="language- extra-class"><pre><code>/**
+ * 画线
+ */
+@Override
+public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+    super.onDraw(c, parent, state);
+    if (orientation == RecyclerView.HORIZONTAL) {
+        drawVertical(c, parent, state);
+    } else if (orientation == RecyclerView.VERTICAL) {
+        drawHorizontal(c, parent, state);
+    }
+}
+
+/**
+ * 设置条目周边的偏移量
+ */
+@Override
+public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    super.getItemOffsets(outRect, view, parent, state);
+    if (orientation == RecyclerView.HORIZONTAL) {
+        //画垂直线
+        outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
+    } else if (orientation == RecyclerView.VERTICAL) {
+        //画水平线
+        outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+    }
+}
+</code></pre></div><h3 id="_5、画出一条华丽的分割线"><a href="#_5、画出一条华丽的分割线" class="header-anchor">#</a> 5、画出一条华丽的分割线</h3> <p>因为getItemOffsets()是相对每个item而言的，即每个item都会偏移出相同的装饰区域。而onDraw()则不同，它是相对Canvas来说的，通俗的说就是要自己找到要画的线的位置，这是自定义ItemDecoration中唯一比较难的地方了。</p> <div class="language- extra-class"><pre><code>/**
+ * 在构造方法中加载系统自带的分割线（就是ListView用的那个分割线）
+ */
+public MyDecorationOne(Context context, int orientation) {
+    this.orientation = orientation;
+    int[] attrs = new int[]{android.R.attr.listDivider};
+    TypedArray a = context.obtainStyledAttributes(attrs);
+    mDivider = a.getDrawable(0);
+    a.recycle();
+}    
+
+/**
+ * 画竖直分割线
+ */
+private void drawVertical(Canvas c, RecyclerView parent, RecyclerView.State state) {
+    int childCount = parent.getChildCount();
+    for (int i = 0; i &lt; childCount; i++) {
+        View child = parent.getChildAt(i);
+        RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+        int left = child.getRight() + params.rightMargin;
+        int top = child.getTop() - params.topMargin;
+        int right = left + mDivider.getIntrinsicWidth();
+        int bottom = child.getBottom() + params.bottomMargin;
+        mDivider.setBounds(left, top, right, bottom);
+        mDivider.draw(c);
+    }
+}
+
+/**
+ * 画水平分割线
+ */
+private void drawHorizontal(Canvas c, RecyclerView parent, RecyclerView.State state) {
+    int childCount = parent.getChildCount();
+    for (int i = 0; i &lt; childCount; i++) {
+        View child = parent.getChildAt(i);
+        RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+        int left = child.getLeft() - params.leftMargin;
+        int top = child.getBottom() + params.bottomMargin;
+        int right = child.getRight() + params.rightMargin;
+        int bottom = top + mDivider.getIntrinsicHeight();
+        mDivider.setBounds(left, top, right, bottom);
+        mDivider.draw(c);
+    }
+}
+</code></pre></div><p>下图仅对水平分割线的左、上坐标进行图解，其他坐标的计算以此类推。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210107081848.png" alt=""></p> <h3 id="_6、效果"><a href="#_6、效果" class="header-anchor">#</a> 6、效果</h3> <p>看了下面的效果，你可能会吐槽说，不就是加条分割线吗？要不要这么大费周章？是的，一开始我也是这么想，确实只是为了画条分割线的话，这也太麻烦了，而且项目开发中很少对分割线有多高的定制要求，一般就是ListView那样的，最多就是改改颜色这些。所以本人在之前有对RecyclerView进行过一次封装，可以轻松实现分割线，有兴趣的可以<a href="https://github.com/GitLqr/LQRRecyclerViewLibrary" target="_blank" rel="noopener noreferrer">戳我看看！！<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。好了，下面继续。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210107081906.gif" alt=""></p> <h2 id="三、使用itemdecoration绘制表格"><a href="#三、使用itemdecoration绘制表格" class="header-anchor">#</a> 三、使用ItemDecoration绘制表格</h2> <p>经过上面的学习，相信心中已经对ItemDecoration有个大概的底了，下面再来实现个其他的效果吧——绘制表格。</p> <h3 id="_1、分析"><a href="#_1、分析" class="header-anchor">#</a> 1、分析</h3> <p>我们知道ItemDecoration就是装饰item周边用的，画条分割线只需要2步，1是在item的下方偏移出一定的宽度，2是在偏移出来的位置上画线。画表格线其实也一样，除了画item下方的线，还画item右边的线就好了（当然换成左边也行）。</p> <h3 id="_2、实现"><a href="#_2、实现" class="header-anchor">#</a> 2、实现</h3> <p>为了完成表格的样式，本例中使用的是网格列表（即使用GridLayoutManager）。</p> <h4 id="_1-自定义分割线"><a href="#_1-自定义分割线" class="header-anchor">#</a> 1）自定义分割线</h4> <p>为了效果更加明显，这里自定义分割线样式。</p> <div class="language- extra-class"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+       android:shape=&quot;rectangle&quot;&gt;
+
+    &lt;solid android:color=&quot;#f00&quot;/&gt;
+    &lt;size
+        android:width=&quot;2dp&quot;
+        android:height=&quot;2dp&quot;/&gt;
+
+&lt;/shape&gt;
+</code></pre></div><h4 id="_2-自定义itemdecoration"><a href="#_2-自定义itemdecoration" class="header-anchor">#</a> 2）自定义ItemDecoration</h4> <p>实现上跟画分割线没多大差别，瞄一下就明白了。</p> <div class="language- extra-class"><pre><code>public class MyDecorationTwo extends RecyclerView.ItemDecoration {
+
+    private final Drawable mDivider;
+
+    public MyDecorationTwo(Context context) {
+        mDivider = context.getResources().getDrawable(R.drawable.divider);
+    }
+
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDraw(c, parent, state);
+        drawVertical(c, parent);
+        drawHorizontal(c, parent);
+    }
+
+    private void drawVertical(Canvas c, RecyclerView parent) {
+        int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++) {
+            View child = parent.getChildAt(i);
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            int left = child.getRight() + params.rightMargin;
+            int top = child.getTop() - params.topMargin;
+            int right = left + mDivider.getIntrinsicWidth();
+            int bottom = child.getBottom() + params.bottomMargin;
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    private void drawHorizontal(Canvas c, RecyclerView parent) {
+        int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++) {
+            View child = parent.getChildAt(i);
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            int left = child.getLeft() - params.leftMargin;
+            int top = child.getBottom() + params.bottomMargin;
+            int right = child.getRight() + params.rightMargin;
+            int bottom = top + mDivider.getMinimumHeight();
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+        outRect.set(0, 0, mDivider.getIntrinsicWidth(), mDivider.getIntrinsicHeight());
+    }
+}
+</code></pre></div><h3 id="_3、效果-有瑕疵"><a href="#_3、效果-有瑕疵" class="header-anchor">#</a> 3、效果（有瑕疵）</h3> <p>可以看出下面的效果是有问题的，表格的最后一列和最后一行不应该出现边边。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210107081926.gif" alt=""></p> <h3 id="_4、修复"><a href="#_4、修复" class="header-anchor">#</a> 4、修复</h3> <p>既然知道表格的最后一列和最后一行不应该出现边边，那就让最后一列和最后一行的边边消失就好了。有以下几个思路。</p> <ol><li>在onDraw()方法中，判断当前列是否为最后一列和判断当前行是否为最后一行来决定是否绘制边边。</li> <li>在getItemOffsets()方法中对行列进行判断，来决定是否设置条目偏移量（当偏移量为0时，自然就看不出边边了）。</li></ol> <p>这里我选用第二种方式。这里要说明一下，getItemOffsets()有两个，一个是getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state)，另一个是getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent)，第二个已经过时，但是该方法中有回传当前item的position，所以我选用了过时的getItemOffsets()。</p> <div class="language- extra-class"><pre><code>@Override
+public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
+    super.getItemOffsets(outRect, itemPosition, parent);
+    int right = mDivider.getIntrinsicWidth();
+    int bottom = mDivider.getIntrinsicHeight();
+
+    if (isLastSpan(itemPosition, parent)) {
+        right = 0;
+    }
+
+    if (isLastRow(itemPosition, parent)) {
+        bottom = 0;
+    }
+    outRect.set(0, 0, right, bottom);
+}
+
+public boolean isLastRow(int itemPosition, RecyclerView parent) {
+    RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+    if (layoutManager instanceof GridLayoutManager) {
+        int spanCount = ((GridLayoutManager) layoutManager).getSpanCount();
+        int itemCount = parent.getAdapter().getItemCount();
+        if ((itemCount - itemPosition - 1) &lt; spanCount)
+            return true;
+    }
+    return false;
+}
+
+public boolean isLastSpan(int itemPosition, RecyclerView parent) {
+    RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+    if (layoutManager instanceof GridLayoutManager) {
+        int spanCount = ((GridLayoutManager) layoutManager).getSpanCount();
+        if ((itemPosition + 1) % spanCount == 0)
+            return true;
+    }
+    return false;
+}
+</code></pre></div><p>代码理解上并不难，这里不做多余的解释。</p> <h3 id="_5、效果-几乎没有瑕疵"><a href="#_5、效果-几乎没有瑕疵" class="header-anchor">#</a> 5、效果（几乎没有瑕疵）</h3> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210107082039.gif" alt=""></p> <h2 id="四、使用itemdecoration实现侧边字母提示"><a href="#四、使用itemdecoration实现侧边字母提示" class="header-anchor">#</a> 四、使用ItemDecoration实现侧边字母提示</h2> <p>上面的两个例子仅仅只是画线，下面的这个例子就来画字吧。先看下效果。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210107082110.gif" alt=""></p> <h3 id="_1、分析-2"><a href="#_1、分析-2" class="header-anchor">#</a> 1、分析</h3> <p>说到底也就是在item左边偏移出来的空间区域中心画个字母而已。下面是大体思路：</p> <ol><li>在item的左边偏移出一定的空间（本例偏移量是40dp）。</li> <li>在onDraw()时，使用Pinyin工具类获取item中名字拼音的第一个字母。</li> <li>判断如果当前是第一个item，就画出字母。</li> <li>若不是第一个item则判断当前item的名字字母与上一个字母是否一致，不一致则画出当前字母。</li></ol> <h3 id="_2、实现-2"><a href="#_2、实现-2" class="header-anchor">#</a> 2、实现</h3> <h4 id="_1-自定义文字拼音工具类"><a href="#_1-自定义文字拼音工具类" class="header-anchor">#</a> 1）自定义文字拼音工具类</h4> <p>*<em><strong>该工具类需要用到pinyin4j-2.5.0.jar</strong></em></p> <div class="language- extra-class"><pre><code>public class PinyinUtils {
+
+    public static String getPinyin(String str) {
+
+        HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();
+        format.setCaseType(HanyuPinyinCaseType.UPPERCASE);
+        format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
+
+        StringBuilder sb = new StringBuilder();
+
+        char[] charArray = str.toCharArray();
+        for (int i = 0; i &lt; charArray.length; i++) {
+            char c = charArray[i];
+            // 如果是空格, 跳过
+            if (Character.isWhitespace(c)) {
+                continue;
+            }
+            if (c &gt;= -127 &amp;&amp; c &lt; 128 || !(c &gt;= 0x4E00 &amp;&amp; c &lt;= 0x9FA5)) {
+                // 肯定不是汉字
+                sb.append(c);
+            } else {
+                String s = &quot;&quot;;
+                try {
+                    // 通过char得到拼音集合. 单 -&gt; dan, shan 
+                    s = PinyinHelper.toHanyuPinyinStringArray(c, format)[0];
+                    sb.append(s);
+                } catch (BadHanyuPinyinOutputFormatCombination e) {
+                    e.printStackTrace();
+                    sb.append(s);
+                }
+            }
+        }
+
+        return sb.toString();
+    }
+}
+</code></pre></div><h4 id="_2-自定义itemdecoration-2"><a href="#_2-自定义itemdecoration-2" class="header-anchor">#</a> 2）自定义ItemDecoration</h4> <div class="language- extra-class"><pre><code>public class MyDecorationThree extends RecyclerView.ItemDecoration {
+
+    Context mContext;
+    List&lt;String&gt; mData;
+    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+
+    public MyDecorationThree(Context context, List&lt;String&gt; data) {
+        mContext = context;
+        mData = data;
+        paint.setTextSize(sp2px(16));
+        paint.setColor(Color.RED);
+    }
+
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDraw(c, parent, state);
+        drawLetterToItemLeft(c, parent);
+    }
+
+    private void drawLetterToItemLeft(Canvas c, RecyclerView parent) {
+        RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+        if (!(layoutManager instanceof LinearLayoutManager))
+            return;
+        int childCount = parent.getChildCount();
+        for (int i = 0; i &lt; childCount; i++) {
+            int position = ((LinearLayoutManager) layoutManager).findFirstVisibleItemPosition() + i;
+            View child = parent.getChildAt(i);
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            float left = 0;
+            float top = child.getTop() - params.topMargin;
+            float right = child.getLeft() - params.leftMargin;
+            float bottom = child.getBottom() + params.bottomMargin;
+            float width = right - left;
+            float height = bottom - (bottom - top) / 2;
+            //当前名字拼音的第一个字母
+            String letter = PinyinUtils.getPinyin(mData.get(position)).charAt(0) + &quot;&quot;;
+            if (position == 0) {
+                drawLetter(letter, width, height, c, parent);
+            } else {
+                String preLetter = PinyinUtils.getPinyin(mData.get(position - 1)).charAt(0) + &quot;&quot;;
+                if (!letter.equalsIgnoreCase(preLetter)) {
+                    drawLetter(letter, width, height, c, parent);
+                }
+            }
+        }
+    }
+
+    private void drawLetter(String letter, float width, float height, Canvas c, RecyclerView parent) {
+        float fontLength = getFontLength(paint, letter);
+        float fontHeight = getFontHeight(paint);
+        float tx = (width - fontLength) / 2;
+        float ty = height - fontHeight / 2 + getFontLeading(paint);
+        c.drawText(letter, tx, ty, paint);
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+        outRect.set(dip2px(40), 0, 0, 0);
+    }
+
+    private int dip2px(int dip) {
+        float density = mContext.getResources().getDisplayMetrics().density;
+        int px = (int) (dip * density + 0.5f);
+        return px;
+    }
+
+    public int sp2px(int sp) {
+        return (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, mContext.getResources().getDisplayMetrics()) + 0.5f);
+    }
+
+
+    /**
+     * 返回指定笔和指定字符串的长度
+     */
+    private float getFontLength(Paint paint, String str) {
+        return paint.measureText(str);
+    }
+
+    /**
+     * 返回指定笔的文字高度
+     */
+    private float getFontHeight(Paint paint) {
+        Paint.FontMetrics fm = paint.getFontMetrics();
+        return fm.descent - fm.ascent;
+    }
+
+
+    /**
+     * 返回指定笔离文字顶部的基准距离
+     */
+    private float getFontLeading(Paint paint) {
+        Paint.FontMetrics fm = paint.getFontMetrics();
+        return fm.leading - fm.ascent;
+    }
+}
+</code></pre></div><h3 id="最后附上demo链接"><a href="#最后附上demo链接" class="header-anchor">#</a> 最后附上Demo链接</h3> <p><a href="https://github.com/GitLqr/MaterialDesignDemo" target="_blank" rel="noopener noreferrer">https://github.com/GitLqr/MaterialDesignDemo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <center><img style="width:100%;" src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/FSA_QR_bottom.png"/></center>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=MaterialDesign" title="标签">#MaterialDesign</a><a href="/tags/?tag=RecyclerView" title="标签">#RecyclerView</a><a href="/tags/?tag=ItemDecoration" title="标签">#ItemDecoration</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/2a27e8/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">Material Design 兼容性控件学习</div></a> <a href="/pages/79e15e/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">RecyclerView之使用ItemTouchHelper实现交互动画</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/2a27e8/" class="prev">Material Design 兼容性控件学习</a></span> <span class="next"><a href="/pages/79e15e/">RecyclerView之使用ItemTouchHelper实现交互动画</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/c2b035/"><div>
+            Flutter - 子部件任意位置观察滚动数据
+            <!----></div></a> <span class="date">11-24</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/f66719/"><div>
+            Flutter - 危！3.24版本苹果审核被拒！
+            <!----></div></a> <span class="date">11-13</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/77efcc/"><div>
+            Flutter - 轻松搞定炫酷视差(Parallax)效果
+            <!----></div></a> <span class="date">09-21</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="https://github.com/LinXunFeng" title="GitHub for LinXunFeng" target="_blank" class="iconfont icon-githubsquare"></a><a href="mailto:linxunfeng@yeah.net" title="email for LinXunFeng" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/GitLqr" title="GitHub for GitLqr" target="_blank" class="iconfont icon-github-circle"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2020-2024
+    <span><a href="/about" target="_blank">FSA全栈行动</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.686005d4.js" defer></script><script src="/assets/js/2.7c3035d6.js" defer></script><script src="/assets/js/16.c7aca3d6.js" defer></script>
+  </body>
+</html>
