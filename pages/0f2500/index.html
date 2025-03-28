@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MaterialDesign之对TabLayout的探索 | FSA全栈行动</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-3568502583266202" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="/js/global.js"></script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?885476c2eae58d4aee1ab7fcfb548adb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+      </script>
+    <meta name="description" content="分享Android、iOS、Python、Vue等技术资讯、学习笔记，成功有梦想的全栈工程师，欢迎关注。">
+    <meta name="keywords" content="FSA全栈行动,LinXunFeng,GitLqr,全栈技术博客,移动端,web前端,后端开发,前端框架,web前端,Android框架,iOS框架,Flutter框架,Python框架,Vue框架,技术文档,学习,面试,Java,Kotlin,object-c,Swift,Kotlin,Dart,JavaScript,js,ES6,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="code-Cyx4xlZmzI">
+    <meta name="google-site-verification" content="_0KO4KbxdSwB-TPRQ8bRqmML8dnrx5G82GhQNZlR4HU">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.04d17316.css" as="style"><link rel="preload" href="/assets/js/app.8fccfbff.js" as="script"><link rel="preload" href="/assets/js/2.65325ad1.js" as="script"><link rel="preload" href="/assets/js/21.8c8f99f5.js" as="script"><link rel="prefetch" href="/assets/js/10.7236c188.js"><link rel="prefetch" href="/assets/js/100.49b67260.js"><link rel="prefetch" href="/assets/js/101.2ac9bc4c.js"><link rel="prefetch" href="/assets/js/102.304fa6fc.js"><link rel="prefetch" href="/assets/js/103.3945d263.js"><link rel="prefetch" href="/assets/js/104.16bcbf78.js"><link rel="prefetch" href="/assets/js/105.f486d3c0.js"><link rel="prefetch" href="/assets/js/106.a334e390.js"><link rel="prefetch" href="/assets/js/107.5c9f7259.js"><link rel="prefetch" href="/assets/js/108.f0040eee.js"><link rel="prefetch" href="/assets/js/109.98219211.js"><link rel="prefetch" href="/assets/js/11.a9cc6d66.js"><link rel="prefetch" href="/assets/js/110.8d224c2a.js"><link rel="prefetch" href="/assets/js/111.b7c178de.js"><link rel="prefetch" href="/assets/js/112.efc5f413.js"><link rel="prefetch" href="/assets/js/113.8d4fb7a3.js"><link rel="prefetch" href="/assets/js/114.3e4b3bce.js"><link rel="prefetch" href="/assets/js/115.57a9f6b0.js"><link rel="prefetch" href="/assets/js/116.48ef9636.js"><link rel="prefetch" href="/assets/js/117.4c7dfb4c.js"><link rel="prefetch" href="/assets/js/118.c10e3152.js"><link rel="prefetch" href="/assets/js/119.057b4bd7.js"><link rel="prefetch" href="/assets/js/12.38abed75.js"><link rel="prefetch" href="/assets/js/120.716c7fac.js"><link rel="prefetch" href="/assets/js/121.920b82ab.js"><link rel="prefetch" href="/assets/js/122.0651a24f.js"><link rel="prefetch" href="/assets/js/123.9f18c3d2.js"><link rel="prefetch" href="/assets/js/124.d36a10a4.js"><link rel="prefetch" href="/assets/js/125.560ce3c9.js"><link rel="prefetch" href="/assets/js/126.8ba094d9.js"><link rel="prefetch" href="/assets/js/127.baad8b8d.js"><link rel="prefetch" href="/assets/js/128.5b8cdcdf.js"><link rel="prefetch" href="/assets/js/129.9308643e.js"><link rel="prefetch" href="/assets/js/13.1eea71ba.js"><link rel="prefetch" href="/assets/js/130.a7066095.js"><link rel="prefetch" href="/assets/js/131.f12e2bbe.js"><link rel="prefetch" href="/assets/js/132.3404a73b.js"><link rel="prefetch" href="/assets/js/133.ef82b103.js"><link rel="prefetch" href="/assets/js/134.a6c1babb.js"><link rel="prefetch" href="/assets/js/135.0516b511.js"><link rel="prefetch" href="/assets/js/136.4a36fb4d.js"><link rel="prefetch" href="/assets/js/137.74dfdd21.js"><link rel="prefetch" href="/assets/js/138.649ba048.js"><link rel="prefetch" href="/assets/js/139.8b25eda4.js"><link rel="prefetch" href="/assets/js/14.0c8c5eeb.js"><link rel="prefetch" href="/assets/js/140.44541a19.js"><link rel="prefetch" href="/assets/js/141.9620d9e7.js"><link rel="prefetch" href="/assets/js/142.e9145c65.js"><link rel="prefetch" href="/assets/js/143.956e4e38.js"><link rel="prefetch" href="/assets/js/144.392a30b7.js"><link rel="prefetch" href="/assets/js/145.10b47dce.js"><link rel="prefetch" href="/assets/js/146.82e4502f.js"><link rel="prefetch" href="/assets/js/147.4931f79a.js"><link rel="prefetch" href="/assets/js/148.af262cbe.js"><link rel="prefetch" href="/assets/js/149.a11f5007.js"><link rel="prefetch" href="/assets/js/15.2f53b164.js"><link rel="prefetch" href="/assets/js/150.c514af48.js"><link rel="prefetch" href="/assets/js/151.8d3ca574.js"><link rel="prefetch" href="/assets/js/152.7037d553.js"><link rel="prefetch" href="/assets/js/153.c3b262f0.js"><link rel="prefetch" href="/assets/js/154.34321f4e.js"><link rel="prefetch" href="/assets/js/155.85e20d37.js"><link rel="prefetch" href="/assets/js/156.f9294b55.js"><link rel="prefetch" href="/assets/js/157.e668820a.js"><link rel="prefetch" href="/assets/js/158.d525a01d.js"><link rel="prefetch" href="/assets/js/159.af382a5c.js"><link rel="prefetch" href="/assets/js/16.16db03dd.js"><link rel="prefetch" href="/assets/js/160.65e54fa3.js"><link rel="prefetch" href="/assets/js/161.e47dfd5a.js"><link rel="prefetch" href="/assets/js/162.5b88ebf1.js"><link rel="prefetch" href="/assets/js/163.ad13c6d7.js"><link rel="prefetch" href="/assets/js/164.8aa03dbb.js"><link rel="prefetch" href="/assets/js/165.2210cbd1.js"><link rel="prefetch" href="/assets/js/166.655ffeab.js"><link rel="prefetch" href="/assets/js/167.f55626a6.js"><link rel="prefetch" href="/assets/js/168.ecd4bf0c.js"><link rel="prefetch" href="/assets/js/169.7068813c.js"><link rel="prefetch" href="/assets/js/17.5891fe9a.js"><link rel="prefetch" href="/assets/js/170.86feecca.js"><link rel="prefetch" href="/assets/js/171.904cdfbb.js"><link rel="prefetch" href="/assets/js/172.468ba6fa.js"><link rel="prefetch" href="/assets/js/173.6844288e.js"><link rel="prefetch" href="/assets/js/174.18588a01.js"><link rel="prefetch" href="/assets/js/175.b781c2bd.js"><link rel="prefetch" href="/assets/js/176.8d543d32.js"><link rel="prefetch" href="/assets/js/177.d6b175c9.js"><link rel="prefetch" href="/assets/js/178.b62f9f6c.js"><link rel="prefetch" href="/assets/js/179.a7ff5a0b.js"><link rel="prefetch" href="/assets/js/18.c0ecf403.js"><link rel="prefetch" href="/assets/js/180.1c6a9ff6.js"><link rel="prefetch" href="/assets/js/181.8633a4f7.js"><link rel="prefetch" href="/assets/js/182.67671d0a.js"><link rel="prefetch" href="/assets/js/183.0501ecfc.js"><link rel="prefetch" href="/assets/js/184.945e4baa.js"><link rel="prefetch" href="/assets/js/185.0c84acc1.js"><link rel="prefetch" href="/assets/js/186.e4c84623.js"><link rel="prefetch" href="/assets/js/187.49e64943.js"><link rel="prefetch" href="/assets/js/188.dacf8ae1.js"><link rel="prefetch" href="/assets/js/189.14436792.js"><link rel="prefetch" href="/assets/js/19.32f2f0ac.js"><link rel="prefetch" href="/assets/js/190.78920970.js"><link rel="prefetch" href="/assets/js/191.ea16a82f.js"><link rel="prefetch" href="/assets/js/192.c6437eed.js"><link rel="prefetch" href="/assets/js/193.06692958.js"><link rel="prefetch" href="/assets/js/194.1f9f1fcd.js"><link rel="prefetch" href="/assets/js/195.24cc4d32.js"><link rel="prefetch" href="/assets/js/196.884ccaa5.js"><link rel="prefetch" href="/assets/js/197.de11e5f8.js"><link rel="prefetch" href="/assets/js/198.344f71e5.js"><link rel="prefetch" href="/assets/js/199.b4712658.js"><link rel="prefetch" href="/assets/js/20.3b17e4f2.js"><link rel="prefetch" href="/assets/js/200.884bd72f.js"><link rel="prefetch" href="/assets/js/201.fcd3cb09.js"><link rel="prefetch" href="/assets/js/202.dc08b64e.js"><link rel="prefetch" href="/assets/js/203.cab72240.js"><link rel="prefetch" href="/assets/js/204.6c633881.js"><link rel="prefetch" href="/assets/js/205.86ed0cf1.js"><link rel="prefetch" href="/assets/js/206.fdb3f640.js"><link rel="prefetch" href="/assets/js/207.37627703.js"><link rel="prefetch" href="/assets/js/208.564cffe9.js"><link rel="prefetch" href="/assets/js/209.aac13919.js"><link rel="prefetch" href="/assets/js/210.fd9053d5.js"><link rel="prefetch" href="/assets/js/211.94523937.js"><link rel="prefetch" href="/assets/js/212.44e97da3.js"><link rel="prefetch" href="/assets/js/213.446c3d2d.js"><link rel="prefetch" href="/assets/js/214.ccd9296f.js"><link rel="prefetch" href="/assets/js/215.edf77a57.js"><link rel="prefetch" href="/assets/js/216.7e09502f.js"><link rel="prefetch" href="/assets/js/217.5edd1b5f.js"><link rel="prefetch" href="/assets/js/218.f40f62e5.js"><link rel="prefetch" href="/assets/js/219.62a717ca.js"><link rel="prefetch" href="/assets/js/22.6e524712.js"><link rel="prefetch" href="/assets/js/220.66a28481.js"><link rel="prefetch" href="/assets/js/221.64700120.js"><link rel="prefetch" href="/assets/js/222.9522ed31.js"><link rel="prefetch" href="/assets/js/223.920fd0bc.js"><link rel="prefetch" href="/assets/js/224.7c461c6b.js"><link rel="prefetch" href="/assets/js/225.f2834d0b.js"><link rel="prefetch" href="/assets/js/226.baeb66f0.js"><link rel="prefetch" href="/assets/js/227.6833182d.js"><link rel="prefetch" href="/assets/js/228.309b2832.js"><link rel="prefetch" href="/assets/js/229.89fcf09f.js"><link rel="prefetch" href="/assets/js/23.7f1d0c9f.js"><link rel="prefetch" href="/assets/js/230.2a05b44f.js"><link rel="prefetch" href="/assets/js/231.41c1a4d3.js"><link rel="prefetch" href="/assets/js/232.b7dafe5d.js"><link rel="prefetch" href="/assets/js/233.b02600e1.js"><link rel="prefetch" href="/assets/js/234.4997f198.js"><link rel="prefetch" href="/assets/js/235.5f0dea97.js"><link rel="prefetch" href="/assets/js/236.f13c27bb.js"><link rel="prefetch" href="/assets/js/237.251f5c50.js"><link rel="prefetch" href="/assets/js/238.78a90046.js"><link rel="prefetch" href="/assets/js/239.8450e32f.js"><link rel="prefetch" href="/assets/js/24.5687ebbd.js"><link rel="prefetch" href="/assets/js/240.3ba00fae.js"><link rel="prefetch" href="/assets/js/241.119d7398.js"><link rel="prefetch" href="/assets/js/242.d9e38b4c.js"><link rel="prefetch" href="/assets/js/243.1cb5e93d.js"><link rel="prefetch" href="/assets/js/244.5dba4049.js"><link rel="prefetch" href="/assets/js/245.041ff325.js"><link rel="prefetch" href="/assets/js/246.01e8fb38.js"><link rel="prefetch" href="/assets/js/247.9e2848dd.js"><link rel="prefetch" href="/assets/js/248.7d1a463b.js"><link rel="prefetch" href="/assets/js/249.7f94b77b.js"><link rel="prefetch" href="/assets/js/25.4c4aff92.js"><link rel="prefetch" href="/assets/js/250.61d6eaed.js"><link rel="prefetch" href="/assets/js/251.9a19bef4.js"><link rel="prefetch" href="/assets/js/26.916b4f40.js"><link rel="prefetch" href="/assets/js/27.63f80c13.js"><link rel="prefetch" href="/assets/js/28.15fd2d93.js"><link rel="prefetch" href="/assets/js/29.8548eb74.js"><link rel="prefetch" href="/assets/js/3.74e354ce.js"><link rel="prefetch" href="/assets/js/30.9936937c.js"><link rel="prefetch" href="/assets/js/31.e607f3ca.js"><link rel="prefetch" href="/assets/js/32.a3b7aba3.js"><link rel="prefetch" href="/assets/js/33.dc67babd.js"><link rel="prefetch" href="/assets/js/34.c5837f26.js"><link rel="prefetch" href="/assets/js/35.e098be75.js"><link rel="prefetch" href="/assets/js/36.97ec8802.js"><link rel="prefetch" href="/assets/js/37.b6e0259d.js"><link rel="prefetch" href="/assets/js/38.c5d2822b.js"><link rel="prefetch" href="/assets/js/39.7a2ff41a.js"><link rel="prefetch" href="/assets/js/4.5f1358bf.js"><link rel="prefetch" href="/assets/js/40.d4154637.js"><link rel="prefetch" href="/assets/js/41.09b403c9.js"><link rel="prefetch" href="/assets/js/42.2de8a655.js"><link rel="prefetch" href="/assets/js/43.67848353.js"><link rel="prefetch" href="/assets/js/44.4372f593.js"><link rel="prefetch" href="/assets/js/45.ba37db98.js"><link rel="prefetch" href="/assets/js/46.3b6adc12.js"><link rel="prefetch" href="/assets/js/47.14328aa9.js"><link rel="prefetch" href="/assets/js/48.79868819.js"><link rel="prefetch" href="/assets/js/49.d6536b2c.js"><link rel="prefetch" href="/assets/js/5.5cca7e6d.js"><link rel="prefetch" href="/assets/js/50.4cd6b621.js"><link rel="prefetch" href="/assets/js/51.a32e224a.js"><link rel="prefetch" href="/assets/js/52.ca9fd158.js"><link rel="prefetch" href="/assets/js/53.5efda7bd.js"><link rel="prefetch" href="/assets/js/54.53c87e4a.js"><link rel="prefetch" href="/assets/js/55.34607da9.js"><link rel="prefetch" href="/assets/js/56.0623a544.js"><link rel="prefetch" href="/assets/js/57.ab79d579.js"><link rel="prefetch" href="/assets/js/58.38203dc7.js"><link rel="prefetch" href="/assets/js/59.8e2f7cad.js"><link rel="prefetch" href="/assets/js/6.83ca1518.js"><link rel="prefetch" href="/assets/js/60.52fc0f8c.js"><link rel="prefetch" href="/assets/js/61.6523ab5a.js"><link rel="prefetch" href="/assets/js/62.c7c66a02.js"><link rel="prefetch" href="/assets/js/63.944f4e72.js"><link rel="prefetch" href="/assets/js/64.8a8409ff.js"><link rel="prefetch" href="/assets/js/65.b7c8fc4f.js"><link rel="prefetch" href="/assets/js/66.b9fa1d62.js"><link rel="prefetch" href="/assets/js/67.0ebaf9be.js"><link rel="prefetch" href="/assets/js/68.04e383a3.js"><link rel="prefetch" href="/assets/js/69.f979e031.js"><link rel="prefetch" href="/assets/js/7.2546ea73.js"><link rel="prefetch" href="/assets/js/70.88f0fd88.js"><link rel="prefetch" href="/assets/js/71.a7252a44.js"><link rel="prefetch" href="/assets/js/72.b9db07fb.js"><link rel="prefetch" href="/assets/js/73.70ced2af.js"><link rel="prefetch" href="/assets/js/74.27b189f2.js"><link rel="prefetch" href="/assets/js/75.8223910a.js"><link rel="prefetch" href="/assets/js/76.f87ad75d.js"><link rel="prefetch" href="/assets/js/77.b7bed280.js"><link rel="prefetch" href="/assets/js/78.cebc8a2d.js"><link rel="prefetch" href="/assets/js/79.a4409f72.js"><link rel="prefetch" href="/assets/js/8.4ca78f88.js"><link rel="prefetch" href="/assets/js/80.f9b7cac2.js"><link rel="prefetch" href="/assets/js/81.7b090866.js"><link rel="prefetch" href="/assets/js/82.f84d9cc9.js"><link rel="prefetch" href="/assets/js/83.9647495f.js"><link rel="prefetch" href="/assets/js/84.22148442.js"><link rel="prefetch" href="/assets/js/85.85cfb1f9.js"><link rel="prefetch" href="/assets/js/86.fa75e7df.js"><link rel="prefetch" href="/assets/js/87.2edc1c0a.js"><link rel="prefetch" href="/assets/js/88.59659960.js"><link rel="prefetch" href="/assets/js/89.20902697.js"><link rel="prefetch" href="/assets/js/9.31aa5b13.js"><link rel="prefetch" href="/assets/js/90.d7d83900.js"><link rel="prefetch" href="/assets/js/91.8c0bf7d6.js"><link rel="prefetch" href="/assets/js/92.2040e957.js"><link rel="prefetch" href="/assets/js/93.f38fb5f0.js"><link rel="prefetch" href="/assets/js/94.c8382b5d.js"><link rel="prefetch" href="/assets/js/95.4ce01b83.js"><link rel="prefetch" href="/assets/js/96.4a8b9114.js"><link rel="prefetch" href="/assets/js/97.7c560ada.js"><link rel="prefetch" href="/assets/js/98.d940b68d.js"><link rel="prefetch" href="/assets/js/99.999db4d9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.04d17316.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210131112211.jpg" alt="FSA全栈行动" class="logo"> <span class="site-name can-hide">FSA全栈行动</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端" class="dropdown-title"><a href="/mobile/" class="link-title">移动端</a> <span class="title" style="display:none;">移动端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>移动端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/61d6a8/" class="nav-link">Android</a></li><li class="dropdown-subitem"><a href="/pages/cb27eb/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/pages/61cc74/" class="nav-link">Flutter</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/kotlin/" class="nav-link">《Kotlin快速入门进阶》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/" class="nav-link">《Flutter从入门到实战》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/lxf/review/" class="nav-link">《Flutter复习》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/backend/" class="nav-link">后端</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="内功心法" class="dropdown-title"><a href="/power/" class="link-title">内功心法</a> <span class="title" style="display:none;">内功心法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/designpattern/" class="nav-link">《深入浅出设计模式Java版》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/ea5b48/" class="nav-link">逆向</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About" class="dropdown-title"><!----> <span class="title" style="display:;">About</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/LinXunFeng/" class="nav-link">LinXunFeng</a></li><li class="dropdown-item"><!----> <a href="/about/GitLqr/" class="nav-link">GitLqr</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210131111432.png"> <div class="blogger-info"><h3>公众号：FSA全栈行动</h3> <span>记录学习过程中的知识</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="移动端" class="dropdown-title"><a href="/mobile/" class="link-title">移动端</a> <span class="title" style="display:none;">移动端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>移动端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/61d6a8/" class="nav-link">Android</a></li><li class="dropdown-subitem"><a href="/pages/cb27eb/" class="nav-link">iOS</a></li><li class="dropdown-subitem"><a href="/pages/61cc74/" class="nav-link">Flutter</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/kotlin/" class="nav-link">《Kotlin快速入门进阶》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/" class="nav-link">《Flutter从入门到实战》笔记</a></li><li class="dropdown-subitem"><a href="/note/flutter/lxf/review/" class="nav-link">《Flutter复习》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/web/" class="nav-link">前端</a></div><div class="nav-item"><a href="/backend/" class="nav-link">后端</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="内功心法" class="dropdown-title"><a href="/power/" class="link-title">内功心法</a> <span class="title" style="display:none;">内功心法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/designpattern/" class="nav-link">《深入浅出设计模式Java版》笔记</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/ea5b48/" class="nav-link">逆向</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="About" class="dropdown-title"><!----> <span class="title" style="display:;">About</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/about/LinXunFeng/" class="nav-link">LinXunFeng</a></li><li class="dropdown-item"><!----> <a href="/about/GitLqr/" class="nav-link">GitLqr</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>AndroidUI</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/61d6a8/" class="sidebar-link">RecyclerView遇到notifyDataSetChanged无效时的解决方案</a></li><li><a href="/pages/2a27e8/" class="sidebar-link">Material Design 兼容性控件学习</a></li><li><a href="/pages/5c8459/" class="sidebar-link">RecyclerView之ItemDecoration</a></li><li><a href="/pages/79e15e/" class="sidebar-link">RecyclerView之使用ItemTouchHelper实现交互动画</a></li><li><a href="/pages/ba99fe/" class="sidebar-link">MaterialDesign之SearchView全面解锁</a></li><li><a href="/pages/fe4c94/" class="sidebar-link">MaterialDesign之学一波Palette</a></li><li><a href="/pages/c7d38a/" class="sidebar-link">MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习</a></li><li><a href="/pages/0f2500/" aria-current="page" class="active sidebar-link">MaterialDesign之对TabLayout的探索</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/0f2500/#一、简述" class="sidebar-link">一、简述</a></li><li class="sidebar-sub-header level2"><a href="/pages/0f2500/#二、使用" class="sidebar-link">二、使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_1、创建tab及tab的点击事件" class="sidebar-link">1、创建Tab及Tab的点击事件</a></li><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_2、自定义tablayout样式" class="sidebar-link">2、自定义TabLayout样式</a></li><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_3、与viewpager结合" class="sidebar-link">3、与ViewPager结合</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/0f2500/#三、拓展" class="sidebar-link">三、拓展</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_1、分析tablayout的结构" class="sidebar-link">1、分析TabLayout的结构</a></li><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_2、为tablayout添加分割线" class="sidebar-link">2、为TabLayout添加分割线</a></li><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_3、为tablayout设置不同状态下的字体大小-并不能成功" class="sidebar-link">3、为TabLayout设置不同状态下的字体大小（并不能成功）</a></li><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#_4、自定义指示器长度" class="sidebar-link">4、自定义指示器长度</a></li><li class="sidebar-sub-header level3"><a href="/pages/0f2500/#最后附上demo链接" class="sidebar-link">最后附上Demo链接</a></li></ul></li></ul></li><li><a href="/pages/7776d6/" class="sidebar-link">多RecyclerView同步滚动</a></li><li><a href="/pages/b1db2f/" class="sidebar-link">Libgdx - 使用pixmap绘制透明圆角矩形</a></li><li><a href="/pages/a39d04/" class="sidebar-link">使用PorterDuff解决clipPath无法抗锯齿问题</a></li><li><a href="/pages/a90e8e/" class="sidebar-link">解决ImageView图片挤压问题</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android第三方SDK</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android混淆</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android仓库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android新闻</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android系统开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android源码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android注解AOP</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android脚本</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>AndroidTv开发</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>AndroidNDK</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android音视频</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android热修复</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android云游戏</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android插件化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOSUI</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS底层原理与应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS组件化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS音视频</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS疑难杂症</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS之Swift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS之RxSwift</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS开源项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>iOS逆向</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter开发</span> <span class="arrow right"></span></p> <!----></section></li></ul> <div class="sidebar-slot sidebar-slot-bottom"><!-- 正方形 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="3508773082"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/mobile/#移动端" data-v-06225672>移动端</a></li><li data-v-06225672><a href="/mobile/#AndroidUI" data-v-06225672>AndroidUI</a></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/GitLqr" target="_blank" title="作者" class="beLink" data-v-06225672>GitLqr</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2017-05-23</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">MaterialDesign之对TabLayout的探索<!----></h1> <div class="page-slot page-slot-top"><!-- 固定100% * 90px可显示，max-height:90px未见显示-->
+     <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;max-height:90px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6625304284"></ins>
+      <center>欢迎关注微信公众号：<a href="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/FSA_QR_bottom.png">[FSA全栈行动 👋]</a><center>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="theme-vdoing-content content__default"><h2 id="一、简述"><a href="#一、简述" class="header-anchor">#</a> 一、简述</h2> <p>TabLayout是Android Support Design库的新控件，可以用来实现开源框架ViewPageIndicator的效果（在MaterialDesign没出来之前基本都用这玩意儿吧~），TabLayout相比它使用上更加简单，且不一定要跟ViewPager一起使用，毕竟谷歌做出来的，稳定性更是不用说啦，此外，本文还会仔细列出本人对该控件的探索过程，从而实现一些控件本身没法实现的自定义效果，下面来看看它都有哪些操作吧。</p> <h2 id="二、使用"><a href="#二、使用" class="header-anchor">#</a> 二、使用</h2> <h3 id="_1、创建tab及tab的点击事件"><a href="#_1、创建tab及tab的点击事件" class="header-anchor">#</a> 1、创建Tab及Tab的点击事件</h3> <p>要使用TabLayout，一般会先在布局文件中放好，如：</p> <div class="language- extra-class"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+              xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+              android:layout_width=&quot;match_parent&quot;
+              android:layout_height=&quot;match_parent&quot;
+              android:orientation=&quot;vertical&quot;&gt;
+
+    &lt;android.support.design.widget.TabLayout
+        android:id=&quot;@+id/tabLayout&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot; /&gt;
+&lt;/LinearLayout&gt;
+</code></pre></div><p>然后在Activity中找到它，对它进行设置，如果不跟ViewPager一起使用的话，可以对TabLayout手动添加多个tab，并设置其点击事件，如：</p> <div class="language- extra-class"><pre><code>@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_tab_layout);
+    mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
+	// 添加多个tab
+	for (int i = 0; i &lt; title.length; i++) {
+        TabLayout.Tab tab = mTabLayout.newTab();
+        tab.setText(title[i]);
+		// tab.setIcon(R.mipmap.ic_launcher);//icon会显示在文字上面
+        mTabLayout.addTab(tab);
+    }
+	// 给tab设置点击事件
+    mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+            Toast.makeText(getApplicationContext(), title[tab.getPosition()], Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
+    });
+}
+</code></pre></div><p>这里比较有意思的是Tab的创建需要调用TabLayout对象的newTab()方法，而不是直接new出一个Tab。Tab除了可以设置文字外，还能设置Icon，甚至可以自定义View，分别调用的是setIcon()和setCustomView()，有兴趣的可以试试看，上面代码效果如下：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106085955.gif" alt="手动创建Tab，并设置点击事件"></p> <h3 id="_2、自定义tablayout样式"><a href="#_2、自定义tablayout样式" class="header-anchor">#</a> 2、自定义TabLayout样式</h3> <p>这个TabLayout还是挺好看的，但开发中难免会要定制TabLayout的样式，如设置默认或选中文字的颜色和大小等，还好，TabLayout尽可能多的提供了这些自定义属性，可以让开发者很方便的修改样式，下面来看看都有哪些控件属性可以设置：</p> <div class="language- extra-class"><pre><code>&lt;!--设置Tab指示器--&gt;
+app:tabIndicatorColor=&quot;&quot;
+app:tabIndicatorHeight=&quot;&quot;
+
+&lt;!--设置Tab位置及显示模式--&gt;
+app:tabGravity=&quot;&quot;
+app:tabMode=&quot;&quot;
+
+&lt;!--设置Tab文字样式--&gt;
+app:tabSelectedTextColor=&quot;&quot;
+app:tabTextAppearance=&quot;&quot;
+app:tabTextColor=&quot;&quot;
+
+&lt;!--设置Tab的宽度、背景、内间距--&gt;
+app:tabMaxWidth=&quot;&quot;
+app:tabMinWidth=&quot;&quot;
+app:tabBackground=&quot;&quot;
+app:tabPadding=&quot;&quot;
+</code></pre></div><h4 id="_1-设置tab指示器"><a href="#_1-设置tab指示器" class="header-anchor">#</a> 1）设置Tab指示器</h4> <p>TabLayout的指示器默认颜色是color.xml中的colorAccent，通过TabLayout提供的自定义属性，可以设置指示器的高度和颜色，如果不想显示指示器（Indicator），可以将其高度设置为0dp或设置其颜色为透明，这里为演示，我就把显示指示器（Indicator）的高度提高，颜色改为刺眼的红眼，如下：</p> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.TabLayout
+    android:id=&quot;@+id/tabLayout&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:tabIndicatorColor=&quot;@color/red&quot;
+    app:tabIndicatorHeight=&quot;8dp&quot;/&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090013.png" alt="设置Tab指示器样式"></p> <h4 id="_2-设置tab位置及显示模式"><a href="#_2-设置tab位置及显示模式" class="header-anchor">#</a> 2）设置Tab位置及显示模式</h4> <p>TabLayout的显示模式（tabMode）默认是固定不可滚动（fixed），位置（tabGravity）默认填满（fill）整个TabLayout，我们先保持app:tabMode=&quot;fixed&quot;，把tabGravity的值换成fill和center对比下，为了方便对比，我把背景也设置了。</p> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.TabLayout
+    android:id=&quot;@+id/tabLayout&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:tabBackground=&quot;@color/colorPrimaryDark&quot;
+    app:tabGravity=&quot;fill&quot; // 再换成center
+    app:tabMode=&quot;fixed&quot;/&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090131.gif" alt="app:tabGravity=&quot;fill&quot;"></p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090156.gif" alt="app:tabGravity=&quot;center&quot;"></p> <p>当tab比较多的时候，一个屏幕宽度容纳不下，这时候就需要让TabLayout可以横向滚动了，只需要修改app:tabMode=&quot;scrollable&quot;即可。注意，当app:tabMode=&quot;scrollable&quot;时，app:tabGravity=&quot;&quot;不管取什么值都不会生效。</p> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.TabLayout
+    android:id=&quot;@+id/tabLayout&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:tabBackground=&quot;@color/colorPrimaryDark&quot;
+    app:tabGravity=&quot;center&quot;
+    app:tabMode=&quot;scrollable&quot;/&gt;
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090218.gif" alt="app:tabMode=&quot;scrollable&quot;"></p> <h4 id="_3-设置tab文字样式"><a href="#_3-设置tab文字样式" class="header-anchor">#</a> 3）设置Tab文字样式</h4> <p>上面的效果不好看，我想让它默认文字颜色为灰色，选中时文字为白色，文字大小为16sp，但TabLayout没有提供直接设置文字大小的属性，这时候就需要用到app:tabTextAppearance=&quot;&quot;了。操作如下：</p> <h5 id="在style-xml中声明文字样式"><a href="#在style-xml中声明文字样式" class="header-anchor">#</a> 在Style.xml中声明文字样式</h5> <div class="language- extra-class"><pre><code>&lt;style name=&quot;TabLayout.TabText&quot; parent=&quot;TextAppearance.Design.Tab&quot;&gt;
+    &lt;item name=&quot;android:textSize&quot;&gt;16sp&lt;/item&gt;
+    &lt;item name=&quot;textAllCaps&quot;&gt;false&lt;/item&gt;
+&lt;/style&gt;
+</code></pre></div><p>其中除了可以设置字体大小外，还可以设置英文是否都全部大写显示。textAllCaps的默认值为true，即英文全部大写。</p> <h5 id="在布局文件中设置tablayout的文字相关属性"><a href="#在布局文件中设置tablayout的文字相关属性" class="header-anchor">#</a> 在布局文件中设置TabLayout的文字相关属性</h5> <div class="language- extra-class"><pre><code>&lt;android.support.design.widget.TabLayout
+    android:id=&quot;@+id/tabLayout&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    app:tabBackground=&quot;@color/colorPrimaryDark&quot;
+    app:tabGravity=&quot;center&quot;
+    app:tabMode=&quot;scrollable&quot;
+	...
+    app:tabSelectedTextColor=&quot;@android:color/white&quot;
+    app:tabTextAppearance=&quot;@style/TabLayout.TabText&quot;
+    app:tabTextColor=&quot;@android:color/darker_gray&quot;/&gt;
+</code></pre></div><p>好了，看看效果如何：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090236.gif" alt="设置Tab文字样式"></p> <p>好了，关于Tab的宽度、内间距等设置比较简单，自己需要的时候试试吧，这里就不演示了。</p> <h3 id="_3、与viewpager结合"><a href="#_3、与viewpager结合" class="header-anchor">#</a> 3、与ViewPager结合</h3> <p>上面通过对TabLayout的单独使用学习了TabLayout的样式自定义、创建Tab及设置Tab的点击事件等，可以说常用的也就那些了，下面来看看TabLayout如何与ViewPager的结合使用。这种需求也是很常见的，界面顶部有一个标签栏，中下部是与标签对应的内容，可以左右滑动，同时标签也跟随其切换，相反的，在切换标签时，内容部分也会跟着变化，不太明白的可以参考下“今日头条”APP的首页界面。这样的效果就可以用TabLayout+ViewPager+Fragment来实现。</p> <h4 id="_1-先在布局文件中放好tablayout和viewpager"><a href="#_1-先在布局文件中放好tablayout和viewpager" class="header-anchor">#</a> 1）先在布局文件中放好TabLayout和ViewPager：</h4> <div class="language- extra-class"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+              xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+              android:layout_width=&quot;match_parent&quot;
+              android:layout_height=&quot;match_parent&quot;
+              android:orientation=&quot;vertical&quot;&gt;
+
+    &lt;android.support.design.widget.TabLayout
+        android:id=&quot;@+id/tabLayout&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        app:tabBackground=&quot;@color/colorPrimaryDark&quot;
+        app:tabMode=&quot;scrollable&quot;
+        app:tabSelectedTextColor=&quot;@android:color/white&quot;
+        app:tabTextColor=&quot;@android:color/darker_gray&quot;/&gt;
+
+    &lt;android.support.v4.view.ViewPager
+        android:id=&quot;@+id/viewPager&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot; /&gt;
+&lt;/LinearLayout&gt;
+</code></pre></div><h4 id="_2-在代码中设置tablayout与viewpager相互关联"><a href="#_2-在代码中设置tablayout与viewpager相互关联" class="header-anchor">#</a> 2）在代码中设置TabLayout与ViewPager相互关联：</h4> <div class="language- extra-class"><pre><code>@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_tab_layout);
+    mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
+    mViewPager = (ViewPager) findViewById(R.id.viewPager);
+    MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager());
+    mViewPager.setAdapter(adapter);
+
+    // 适配器必须重写getPageTitle()方法 
+    mTabLayout.setTabsFromPagerAdapter(adapter);
+    // 监听TabLayout的标签选择，当标签选中时ViewPager切换
+    mTabLayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+    // 监听ViewPager的页面切换，当页面切换时TabLayout的标签跟着切换
+    mViewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
+}
+</code></pre></div><p>这三句代码不难理解，就字面上的意思，但是这三句代码都已经过时，因为要关联TabLayout与ViewPager就得写三句代码似乎是麻烦了一点点（其实我觉得还好吧），所以TabLayout提供了可以通过一句代码搞定两者关联的方法：setupWithViewPager()，因此，上面的代码可以简化如下：</p> <div class="language- extra-class"><pre><code>@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_tab_layout);
+    mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
+    mViewPager = (ViewPager) findViewById(R.id.viewPager);
+    MyViewPagerAdapter adapter = new MyViewPagerAdapter(getSupportFragmentManager());
+    mViewPager.setAdapter(adapter);
+
+	// 关联TabLayout与ViewPager，且适配器必须重写getPageTitle()方法 
+    mTabLayout.setupWithViewPager(mViewPager);
+}
+</code></pre></div><p>来看下效果：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090301.gif" alt="TabLayout与ViewPager相互关联"></p> <p>关联TabLayout与ViewPager相当简单，只要注意ViewPager适配器需重写getPageTitle()方法，这里顺便贴出Demo中适配器的代码：</p> <div class="language- extra-class"><pre><code>class MyViewPagerAdapter extends FragmentPagerAdapter {
+
+    private final String[] title = new String[]{
+            &quot;推荐&quot;, &quot;热点&quot;, &quot;视频&quot;, &quot;深圳&quot;, &quot;通信&quot;,
+            &quot;互联网&quot;, &quot;问答&quot;, &quot;图片&quot;, &quot;电影&quot;,
+            &quot;网络安全&quot;, &quot;软件&quot;};
+
+    public MyViewPagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+    @Override
+    public Fragment getItem(int i) {
+        Fragment fragment = new TextFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(&quot;title&quot;, title[i]);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    @Override
+    public int getCount() {
+        return title.length;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return title[position];
+    }
+}	
+</code></pre></div><h2 id="三、拓展"><a href="#三、拓展" class="header-anchor">#</a> 三、拓展</h2> <p>上面部分是TabLayout的正规使用说明，而这部分是对TabLayout的进一步探索，同时将列出本人在这个过程中的探索思路，可以说是对TabLayout的进一步自定义吧。废话不多说，下面就直接开车了。</p> <blockquote><p>假如，你手中的APP设计稿中有如下的三个需求那该怎么办：</p></blockquote> <blockquote><ol><li>为TabLayout添加分割线，且分割线距离上下存在间距。</li></ol></blockquote> <ol start="2"><li>选中时tab字体变大，未选中时tab字体变小。</li> <li>指示器（Indicator）不要充满整个标签（Tab）</li></ol> <p>简单的说就是为TabLayout添加分割线、设置不同状态下的字体大小和指示器的“长度”，这些在TabLayout中并没有提供直接的修改方法，你可能会想，那我们对TabLayout进行源码分析，然后通过反射等手段拿到其中的控件来设置？不！有时候解决问题不要循规蹈矩，应该适当转变下思路，或许解决问题的方法并不需要去看源码那么困难（如果你是大神，就当我没说），下面看我操作：</p> <h3 id="_1、分析tablayout的结构"><a href="#_1、分析tablayout的结构" class="header-anchor">#</a> 1、分析TabLayout的结构</h3> <p>将APP运行起来，然后回到AS，在菜单栏中依次找到Tools--&gt;Android--&gt;Android Device Monitor，用过Eclipse开发的Android程序员应该都知道这久违的老伙计———Android 设备监测仪。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090317.png" alt="Android 设备监测仪"></p> <p>选中正在运行的APP，点击Dump View Hierarchy for UI Automator。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090328.png" alt="Dump View Hierarchy for UI Automator"></p> <p>可能会卡一下，然后它会自动把当前界面的控件结构展示出来。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090346.png" alt="界面控件结构图"></p> <p>从这个结构上我们可以知道TabLayout（就是HorizontalScrollView）并不是直接就包裹这些Tab的，而是包裹了一个LinearLayout，然后这些Tab放在这个LinearLayout中，此外，可以发现Tab里包含了一个TextView，到这里对前面2个需求是不是有点想法了呢？</p> <h3 id="_2、为tablayout添加分割线"><a href="#_2、为tablayout添加分割线" class="header-anchor">#</a> 2、为TabLayout添加分割线</h3> <p>LinearLayout自带就有设置分割线的方法，我们可以通过它来添加分割线，也没什么好说的，直接上代码：</p> <div class="language- extra-class"><pre><code>mLinearLayout = (LinearLayout) mTabLayout.getChildAt(0);
+// 在所有子控件的中间显示分割线（还可能只显示顶部、尾部和不显示分割线）
+mLinearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+// 设置分割线的距离本身（LinearLayout）的内间距
+mLinearLayout.setDividerPadding(20);
+// 设置分割线的样式
+mLinearLayout.setDividerDrawable(ContextCompat.getDrawable(this, R.drawable.divider_vertical));
+</code></pre></div><p>divider_vertical.xml：</p> <div class="language- extra-class"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;solid android:color=&quot;#ccc&quot;/&gt;
+    &lt;size android:width=&quot;1dp&quot; /&gt;
+&lt;/shape&gt;
+</code></pre></div><p>这样，分割线就有了。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090402.png" alt="为TabLayout添加分割线（有瑕疵）"></p> <p>看起来有点怪是吧，这是因为我们前面设置的app:tabBackground=&quot;@color/colorPrimaryDark&quot;只是给Tab设置了背景色，而不是给Tab的父级控件LinearLayout设置，这个LinearLayout默认的背景色是白色，所以才会是这个样子，解决方法自然就是给LinearLayout设置跟Tab一样的背景色就好了。</p> <div class="language- extra-class"><pre><code>mLinearLayout = (LinearLayout) mTabLayout.getChildAt(0);
+...
+mLinearLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+</code></pre></div><p>这样就完美的为TabLayout设置分割线了。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090414.png" alt="为TabLayout添加分割线（完美）"></p> <h3 id="_3、为tablayout设置不同状态下的字体大小-并不能成功"><a href="#_3、为tablayout设置不同状态下的字体大小-并不能成功" class="header-anchor">#</a> 3、为TabLayout设置不同状态下的字体大小（并不能成功）</h3> <p>用同样的方式拿到Tab中的文本控件，判断当前是否被选中，再对该文本控件进行字体大小设置就欧了。借助上面拿到的用来包裹Tab的LinearLayout（mLinearLayout），遍历LinearLayout中的子控件，拿到一个个的子view（即Tab），再从Tab中拿到文本控件设置文字大小。</p> <div class="language- extra-class"><pre><code>// 默认让所有没有选中的Tab的文字设置为小字体
+for (int i = 0; i &lt; mTabLayout.getTabCount(); i++) {
+    ((TextView) ((LinearLayout) mLinearLayout.getChildAt(i)).getChildAt(1)).setTextSize(10);
+	// 也可以这么写，一样的
+	// ((TextView) ((LinearLayout) ((LinearLayout) mTabLayout.getChildAt(0)).getChildAt(i)).getChildAt(0)).setTextSize(12);
+}
+// 再把当前被选中的Tab文字设置为大字体
+((TextView) ((LinearLayout) mLinearLayout.getChildAt(mTabLayout.getSelectedTabPosition())).getChildAt(1)).setTextSize(30);
+
+// 当选中的Tab切换时，再调整Tab的字体大小
+mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        ((TextView) ((LinearLayout) mLinearLayout.getChildAt(tab.getPosition())).getChildAt(1)).setTextSize(30);
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+        ((TextView) ((LinearLayout) mLinearLayout.getChildAt(tab.getPosition())).getChildAt(1)).setTextSize(12);
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
+    }
+});
+</code></pre></div><p>上面代码中把得到的Tab强转成LinearLayout，这是因为Tab实际上是TabView，而TabView继承自LinearLayout，所以可以这样转换，我们可以看下TabLayout的newTab()方法：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource20210320170901/image/20210106090435.gif" alt="通过newTab()源码查看TabView本质"></p> <p>然而事实并不如意，完全没有效果，去看了下源码，也不是很确定，我的猜想是这样的，当我们对Tab中的文本控件设置字体大小后，TabView的onMeasuer()方法会被重新调用，而这个方法里就对文字大小重新进行赋值，导致文字大小没法按上面的方式进行修改。</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090448.png" alt="TabLayout源码中对Tab文字大小做了限制"></p> <p>所以，文字的大小只能通过Style的方法去修改，且只能统一设置选中和未选中的文字大小，故，这个需求没法完成。</p> <h3 id="_4、自定义指示器长度"><a href="#_4、自定义指示器长度" class="header-anchor">#</a> 4、自定义指示器长度</h3> <p>其实这有点标题党的意思了，TabLayout的指示器长度没法指定，它原本多长就是多长，但可以通过设置Tab外间距的方式，让指示器看起来像是与Tab保持一定距离，这里我在网上找到了方法，方法如下：</p> <div class="language- extra-class"><pre><code>// 设置TabLayout的“长度”
+setIndicator(mTabLayout,10,10);
+
+// 具体方法（通过反射的方式）
+public void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
+    Class&lt;?&gt; tabLayout = tabs.getClass();
+    Field tabStrip = null;
+    try {
+        tabStrip = tabLayout.getDeclaredField(&quot;mTabStrip&quot;);
+    } catch (NoSuchFieldException e) {
+        e.printStackTrace();
+    }
+
+    tabStrip.setAccessible(true);
+    LinearLayout llTab = null;
+    try {
+        llTab = (LinearLayout) tabStrip.get(tabs);
+    } catch (IllegalAccessException e) {
+        e.printStackTrace();
+    }
+
+    int left = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, leftDip, Resources.getSystem().getDisplayMetrics());
+    int right = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, rightDip, Resources.getSystem().getDisplayMetrics());
+
+    for (int i = 0; i &lt; llTab.getChildCount(); i++) {
+        View child = llTab.getChildAt(i);
+        child.setPadding(0, 0, 0, 0);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
+        params.leftMargin = left;
+        params.rightMargin = right;
+        child.setLayoutParams(params);
+        child.invalidate();
+    }
+}
+</code></pre></div><p>这个setIndicator()方法主要是通过反射的方式，先拿到mTabStrip（其实就是TabLayout直接包裹的LinearLayout），再遍历出mTabStrip中的子控件Tab，再设置Tab的外间距，为了证明就是设置了Tab的外间距，这里我分别对mTabStrip设置了背景色和不设置其背景色，来看看对比：</p> <p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090502.png" alt="mTabStrip设置了背景色"> <img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090515.png" alt="mTabStrip不设置背景色"></p> <p>设置了背景色看起来效果还马马虎虎吧，但这样的方式没办法让指示器的长度比文字长度短（无奈~）。好了，不管这个了，既然我前面说了mTabStrip其实就是TabLayout直接包裹的LinearLayout，那通过这个LinearLayout来设置也是可以的，证明一下：</p> <div class="language- extra-class"><pre><code>// 得到TabLayout包裹的LinearLayout并设置背景色
+mLinearLayout = (LinearLayout) mTabLayout.getChildAt(0);
+mLinearLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+...
+// 设置LinearLayout中子View(Tab)的外间距
+int left = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, Resources.getSystem().getDisplayMetrics());
+int right = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, Resources.getSystem().getDisplayMetrics());
+for (int i = 0; i &lt; mLinearLayout.getChildCount(); i++) {
+    View tabView = mLinearLayout.getChildAt(0);
+    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
+    params.leftMargin = left;
+    params.rightMargin = right;
+    tabView.setLayoutParams(params);
+}
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/20210106090526.png" alt="通过查找控件方式，让指示器与Tab存在间距"></p> <p>好，到这里我对TabLayout的探索之旅就结束了，本文通过直接查找TabLayout中控件的方式，来自定义TabLayout本身没法直接设置的样式效果，从而来满足我们项目的需求。这仅仅是我个人对TabLayout的理解，可能存在些瑕疵，请多包涵，如果对“为TabLayout设置不同状态下的字体大小”和“自定义指示器长度”其他确实可行的方法，请留言告诉我一下吧，多多指教，谢谢。</p> <h3 id="最后附上demo链接"><a href="#最后附上demo链接" class="header-anchor">#</a> 最后附上Demo链接</h3> <p><a href="https://github.com/GitLqr/MaterialDesignDemo" target="_blank" rel="noopener noreferrer">https://github.com/GitLqr/MaterialDesignDemo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></div> <div class="page-slot page-slot-bottom"><!-- 横向自适应 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="6620245489"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <center><img style="width:100%;" src="https://cdn.jsdelivr.net/gh/FullStackAction/PicBed@resource/image/FSA_QR_bottom.png"/></center>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=MaterialDesign" title="标签">#MaterialDesign</a><a href="/tags/?tag=TabLayout" title="标签">#TabLayout</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/c7d38a/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习</div></a> <a href="/pages/7776d6/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">多RecyclerView同步滚动</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/c7d38a/" class="prev">MaterialDesign之AppBarLayout与CollapsingToolbarLayout的学习</a></span> <span class="next"><a href="/pages/7776d6/">多RecyclerView同步滚动</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/48cae3/"><div>
+            Android - 2025年安卓真的闭源了吗
+            <!----></div></a> <span class="date">03-28</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/4f5d13/"><div>
+            AI - RooCode 解限使用 Copilot Claude 3.7
+            <!----></div></a> <span class="date">03-18</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/489f24/"><div>
+            Flutter - iOS编译加速
+            <!----></div></a> <span class="date">03-09</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="https://github.com/LinXunFeng" title="GitHub for LinXunFeng" target="_blank" class="iconfont icon-githubsquare"></a><a href="mailto:linxunfeng@yeah.net" title="email for LinXunFeng" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/GitLqr" title="GitHub for GitLqr" target="_blank" class="iconfont icon-github-circle"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2020-2025
+    <span><a href="/about" target="_blank">FSA全栈行动</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <div class="custom-html-window custom-html-window-rb" style="display:;"><div class="custom-wrapper"><span class="close-but">×</span> <div><!-- 固定160*160px -->
+      <ins class="adsbygoogle"
+          style="display:inline-block;max-width:160px;max-height:160px"
+          data-ad-client="ca-pub-7828333725993554"
+          data-ad-slot="8377369658"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </div></div></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8fccfbff.js" defer></script><script src="/assets/js/2.65325ad1.js" defer></script><script src="/assets/js/21.8c8f99f5.js" defer></script>
+  </body>
+</html>
